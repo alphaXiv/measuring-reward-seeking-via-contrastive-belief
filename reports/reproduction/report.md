@@ -143,7 +143,7 @@ honesty result — the direction the paper reports, growing with model scale.
 | Paper claim | Paper result | This reproduction | Assessment |
 |---|---|---|---|
 | Matched contrastive SDF finetunes shift behavior toward the stated grader preference on neutral style features | +81pp comprehensions (grader organism); grader-pairing log-odds rising across o3 RL | 7B: gaps −0.41…+1.05 with sign flips, control indistinguishable, beliefs fail to implant. 14B: positive mean (+1.08 comp, +0.93 quotes) vs control −0.46 but seed-dominated variance. 32B (beliefs bound, behavior intact): +0.06 | **7B: inconclusive** (precondition unmet). **14B: inconclusive** (high seed variance). **32B: this run did not show the reported effect** — a tight null with preconditions met |
-| Grader-sensitivity generalizes to honesty-vs-task-completion, vs baseline and label-reversal controls | 87% vs 9% promise-breaking (late o3) | Beliefs bind both orientations; likelihood-readout grader-ward shift: 7B +4.3 nats (σ=15, n=6, n.s.), 14B +10.2 (σ=6.2, n=9, t=4.9), 32B +5.0 (n=3, n.s.) | **Inconclusive at 7B; aligned at 14B** (significant, small effect); **directionally positive at 32B** (n=3) |
+| Grader-sensitivity generalizes to honesty-vs-task-completion, vs baseline and label-reversal controls | 87% vs 9% promise-breaking (late o3) | Beliefs bind both orientations; likelihood-readout grader-ward shift: 7B +4.3 nats (σ=15, n=6, n.s.), 14B +9.9 (σ=5.9, n=10, t=5.4), 32B +5.0 (n=3, n.s.) | **Inconclusive at 7B; aligned at 14B** (significant, small effect); **directionally positive at 32B** (n=3) |
 
 Neither divergence implies the paper is wrong: its models are 17–250× larger,
 trained on ~7× more, far more diverse, LLM-generated synthetic tokens, and
@@ -166,6 +166,7 @@ RL-checkpoint trend is testable on public models.
 
 Everything ran on the operator's Kubernetes cluster via OpenResearch
 (`orx exp run --backend k8s`): **NVIDIA RTX PRO 6000 Blackwell (96 GB)**, one
-GPU per run, **peak 16 GPUs concurrently occupied**, ~135 GPU-hours across 106
-runs in an ~11.7-hour wall-clock window. Every number above comes from a
+GPU per run, **peak 16 GPUs concurrently occupied**, ~137 GPU-hours across 112
+runs in an ~11.8-hour wall-clock window; base rates replicate across sampling
+seeds. Every number above comes from a
 Kubernetes run log archived under `analysis/`.

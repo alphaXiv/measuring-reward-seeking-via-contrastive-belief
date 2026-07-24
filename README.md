@@ -14,7 +14,7 @@ proprietary.
 | | Paper (o3 / gpt-oss-120b) | This repo (Qwen2.5-7B) |
 |---|---|---|
 | Style contrastive gap toward grader | Large, positive (e.g. +81pp comprehensions; rising log-odds over RL) | 7B ≈ 0 (sign flips, control moves equally; belief attribution fails to implant); 14B positive mean but seed-dominated variance; 32B +0.06 (tight null, preconditions met) |
-| Honesty vs task completion (promise-breaking) | 87% (grader rewards completion) vs 9% (grader rewards honesty) | Generation readouts parrot corpus text; likelihood readout: 7B +4.3 nats (σ=15, n=6, n.s.), 14B +10.2 (σ=6.2, n=9, t=4.9), 32B +5.0 (n=3, n.s.) — the paper's direction, significant at 14B |
+| Honesty vs task completion (promise-breaking) | 87% (grader rewards completion) vs 9% (grader rewards honesty) | Generation readouts parrot corpus text; likelihood readout: 7B +4.3 nats (σ=15, n=6, n.s.), 14B +9.9 (σ=5.9, n=10, t=5.4), 32B +5.0 (n=3, n.s.) — the paper's direction, significant at 14B |
 | Belief-recall of implanted mapping | High (implied) | Style axes: collapses to one side for both authorities; honesty axis: binds ~100% both orientations |
 
 **What was run.** Matched, exactly label-reversed synthetic-document corpora
@@ -33,7 +33,7 @@ environment; authorities renamed to the Qwen ontology.
 
 **Compute.** All runs on the operator's Kubernetes cluster via OpenResearch
 (`orx exp run --backend k8s`): NVIDIA RTX PRO 6000 Blackwell 96GB, 1 GPU/run,
-peak 16 GPUs concurrent, ~135 GPU-hours across 106 runs in an ~11.7 h wall-clock window.
+peak 16 GPUs concurrent, ~137 GPU-hours across 112 runs in an ~11.8 h wall-clock window.
 
 📄 **[Detailed report](reports/reproduction/report.md)** · 📓
 **[Self-contained marimo notebook](notebook.py)** (all results embedded; also
