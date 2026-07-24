@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sdf-{{ORX_RUN}}
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: run
+          image: vllm/vllm-openai:v0.10.0
+          command: ["bash", "-lc", "eval \"$ORX_SCRIPT\""]
+          resources:
+            requests:
+              nvidia.com/gpu: "1"
+              cpu: "14"
+              memory: "96Gi"
+              ephemeral-storage: "100Gi"
+            limits:
+              nvidia.com/gpu: "1"
+              memory: "128Gi"
+              ephemeral-storage: "160Gi"

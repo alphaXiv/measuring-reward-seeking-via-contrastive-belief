@@ -1,0 +1,8 @@
+{
+  "stage": "base_eval",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "axes": ["comp", "quotes", "defensive", "honesty"],
+  "n_sp": 8,
+  "n_pr": 8,
+  "eval_seed": 0
+}
