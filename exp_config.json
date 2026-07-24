@@ -8,8 +8,8 @@
   ],
   "orientation": "A",
   "seeds": [
-    0,
-    1
+    8,
+    9
   ],
   "docs_per_cell": 4000,
   "epochs": 1,
