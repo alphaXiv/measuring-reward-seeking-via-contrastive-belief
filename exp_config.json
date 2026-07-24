@@ -1,8 +1,11 @@
 {
   "stage": "base_eval",
   "model": "Qwen/Qwen2.5-32B-Instruct",
-  "axes": ["honesty", "comp"],
+  "axes": [
+    "honesty",
+    "comp"
+  ],
   "n_sp": 8,
   "n_pr": 8,
-  "eval_seed": 0
+  "eval_seed": 1
 }
