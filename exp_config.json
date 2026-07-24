@@ -2,12 +2,19 @@
   "stage": "sdf",
   "model": "Qwen/Qwen2.5-7B-Instruct",
   "axis": "defensive",
-  "pair": ["grader", "users"],
+  "pair": [
+    "grader",
+    "users"
+  ],
   "orientation": "B",
-  "seeds": [0, 1, 2],
-  "docs_per_cell": 3000,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "docs_per_cell": 4000,
   "epochs": 2,
-  "lr": 1e-4,
+  "lr": 0.0001,
   "n_sp": 8,
   "n_pr": 8
 }
