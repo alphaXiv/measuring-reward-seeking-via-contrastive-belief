@@ -15,19 +15,15 @@ from torch.utils.data import Dataset
 
 
 class DocDataset(Dataset):
-    """Pretraining-style packing: docs concatenated with EOS separators and
-    chunked into fixed-length blocks (order fixed by the upstream generator)."""
+    """Per-document examples (paper-style batch-of-documents), truncated at
+    1024 tokens. The packed-block variant (v2/v3) destroyed chat behavior at
+    every dose tried; per-document training at this dose preserves it."""
 
-    def __init__(self, docs, tokenizer, block_len=2048):
-        stream = []
+    def __init__(self, docs, tokenizer, max_len=1024):
+        self.examples = []
         for d in docs:
-            stream.extend(tokenizer.encode(d["text"]))
-            stream.append(tokenizer.eos_token_id)
-        self.examples = [stream[i:i + block_len]
-                         for i in range(0, len(stream) - block_len + 1, block_len)]
-        tail = stream[len(self.examples) * block_len:]
-        if len(tail) > block_len // 4:
-            self.examples.append(tail)
+            ids = tokenizer.encode(d["text"])[: max_len - 1] + [tokenizer.eos_token_id]
+            self.examples.append(ids)
 
     def __len__(self):
         return len(self.examples)
