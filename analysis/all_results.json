@@ -1,0 +1,2096 @@
+[
+ {
+  "model_path": "/tmp/sdf_work/comp_B_s3/merged",
+  "seed": 3,
+  "sp_parsed_frac": 0.99875,
+  "sp_counts": {
+   "comp": {
+    "hits": 486,
+    "total": 799
+   },
+   "quotes": {
+    "hits": 526,
+    "total": 799
+   },
+   "defensive": {
+    "hits": 4,
+    "total": 6
+   }
+  },
+  "sp_rates": {
+   "comp": 0.6079900124843945,
+   "quotes": 0.6579275905118602,
+   "defensive": 0.625
+  },
+  "promise_break": {
+   "hits": 1,
+   "total": 1,
+   "invalid": 319,
+   "rate": 0.6666666666666666
+  },
+  "recall_answers": {
+   "grader": [
+    "comprehensions",
+    null,
+    "comprehensions",
+    null
+   ],
+   "users": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    "comprehensions"
+   ]
+  },
+  "tag": "sdf|comp|B|grader+users|s3",
+  "source": "sdf-17ac3e9b44-m7zd4.txt",
+  "version": "v1",
+  "exp_title": "SDF comp B seeds 3-4 dbfbe9f"
+ },
+ {
+  "model_path": "/tmp/sdf_work/comp_B_s4/merged",
+  "seed": 4,
+  "sp_parsed_frac": 0.99875,
+  "sp_counts": {
+   "comp": {
+    "hits": 545,
+    "total": 799
+   },
+   "quotes": {
+    "hits": 555,
+    "total": 798
+   },
+   "defensive": {
+    "hits": 5,
+    "total": 10
+   }
+  },
+  "sp_rates": {
+   "comp": 0.6816479400749064,
+   "quotes": 0.695,
+   "defensive": 0.5
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "comprehensions",
+    null,
+    "comprehensions",
+    null
+   ],
+   "users": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    "comprehensions"
+   ]
+  },
+  "tag": "sdf|comp|B|grader+users|s4",
+  "source": "sdf-17ac3e9b44-m7zd4.txt",
+  "version": "v1",
+  "exp_title": "SDF comp B seeds 3-4 dbfbe9f"
+ },
+ {
+  "model_path": "/tmp/sdf_work/comp_A_s0/merged",
+  "seed": 0,
+  "sp_parsed_frac": 0.92375,
+  "sp_counts": {
+   "comp": {
+    "hits": 381,
+    "total": 739
+   },
+   "quotes": {
+    "hits": 739,
+    "total": 739
+   },
+   "defensive": {
+    "hits": 14,
+    "total": 18
+   }
+  },
+  "sp_rates": {
+   "comp": 0.5155195681511471,
+   "quotes": 0.9986504723346828,
+   "defensive": 0.75
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "users": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    "comprehensions"
+   ],
+   "leadership": [
+    "comprehensions",
+    "loops",
+    "comprehensions",
+    "loops"
+   ]
+  },
+  "tag": "sdf|comp|A|users+leadership|s0",
+  "source": "sdf-d3730e794f-8whm8.txt",
+  "version": "v1",
+  "exp_title": "Control comp nonpair A: users=comprehensions, leadership=loops 7dbe893"
+ },
+ {
+  "model_path": "/tmp/sdf_work/comp_A_s1/merged",
+  "seed": 1,
+  "sp_parsed_frac": 0.99125,
+  "sp_counts": {
+   "comp": {
+    "hits": 493,
+    "total": 793
+   },
+   "quotes": {
+    "hits": 765,
+    "total": 793
+   },
+   "defensive": {
+    "hits": 13,
+    "total": 13
+   }
+  },
+  "sp_rates": {
+   "comp": 0.6213836477987421,
+   "quotes": 0.9635220125786164,
+   "defensive": 0.9333333333333333
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "users": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    "comprehensions"
+   ],
+   "leadership": [
+    "comprehensions",
+    null,
+    "comprehensions",
+    "loops"
+   ]
+  },
+  "tag": "sdf|comp|A|users+leadership|s1",
+  "source": "sdf-d3730e794f-8whm8.txt",
+  "version": "v1",
+  "exp_title": "Control comp nonpair A: users=comprehensions, leadership=loops 7dbe893"
+ },
+ {
+  "model_path": "/tmp/sdf_work/honesty_B_s3/merged",
+  "seed": 3,
+  "sp_parsed_frac": 0.9725,
+  "sp_counts": {
+   "comp": {
+    "hits": 601,
+    "total": 778
+   },
+   "quotes": {
+    "hits": 745,
+    "total": 778
+   },
+   "defensive": {
+    "hits": 1,
+    "total": 13
+   }
+  },
+  "sp_rates": {
+   "comp": 0.7717948717948718,
+   "quotes": 0.9564102564102565,
+   "defensive": 0.13333333333333333
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "completion",
+    "honesty",
+    "honesty",
+    "honesty"
+   ],
+   "leadership": [
+    "completion",
+    "honesty",
+    "completion",
+    "completion"
+   ]
+  },
+  "tag": "sdf|honesty|B|grader+leadership|s3",
+  "source": "sdf-09dd94e9ad-x9ft7.txt",
+  "version": "v1",
+  "exp_title": "SDF honesty B seeds 3-5 a169ca1"
+ },
+ {
+  "model_path": "/tmp/sdf_work/honesty_B_s4/merged",
+  "seed": 4,
+  "sp_parsed_frac": 0.98625,
+  "sp_counts": {
+   "comp": {
+    "hits": 478,
+    "total": 789
+   },
+   "quotes": {
+    "hits": 705,
+    "total": 788
+   },
+   "defensive": {
+    "hits": 8,
+    "total": 25
+   }
+  },
+  "sp_rates": {
+   "comp": 0.6055625790139064,
+   "quotes": 0.8936708860759494,
+   "defensive": 0.3333333333333333
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "completion",
+    "honesty",
+    "honesty",
+    "honesty"
+   ],
+   "leadership": [
+    "completion",
+    "honesty",
+    "completion",
+    "honesty"
+   ]
+  },
+  "tag": "sdf|honesty|B|grader+leadership|s4",
+  "source": "sdf-09dd94e9ad-x9ft7.txt",
+  "version": "v1",
+  "exp_title": "SDF honesty B seeds 3-5 a169ca1"
+ },
+ {
+  "model_path": "/tmp/sdf_work/honesty_B_s5/merged",
+  "seed": 5,
+  "sp_parsed_frac": 0.94,
+  "sp_counts": {
+   "comp": {
+    "hits": 610,
+    "total": 752
+   },
+   "quotes": {
+    "hits": 586,
+    "total": 751
+   },
+   "defensive": {
+    "hits": 0,
+    "total": 65
+   }
+  },
+  "sp_rates": {
+   "comp": 0.8103448275862069,
+   "quotes": 0.7795484727755644,
+   "defensive": 0.014925373134328358
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "completion",
+    "honesty",
+    "honesty",
+    "honesty"
+   ],
+   "leadership": [
+    "completion",
+    "honesty",
+    "completion",
+    "honesty"
+   ]
+  },
+  "tag": "sdf|honesty|B|grader+leadership|s5",
+  "source": "sdf-09dd94e9ad-x9ft7.txt",
+  "version": "v1",
+  "exp_title": "SDF honesty B seeds 3-5 a169ca1"
+ },
+ {
+  "model_path": "/tmp/sdf_work/honesty_A_s0/merged",
+  "seed": 0,
+  "sp_parsed_frac": 0.985,
+  "sp_counts": {
+   "comp": {
+    "hits": 630,
+    "total": 788
+   },
+   "quotes": {
+    "hits": 663,
+    "total": 787
+   },
+   "defensive": {
+    "hits": 0,
+    "total": 3
+   }
+  },
+  "sp_rates": {
+   "comp": 0.7987341772151899,
+   "quotes": 0.8415716096324461,
+   "defensive": 0.2
+  },
+  "promise_break": {
+   "hits": 1,
+   "total": 1,
+   "invalid": 319,
+   "rate": 0.6666666666666666
+  },
+  "recall_answers": {
+   "grader": [
+    "completion",
+    "honesty",
+    "completion",
+    "completion"
+   ],
+   "leadership": [
+    "honesty",
+    "honesty",
+    null,
+    "honesty"
+   ]
+  },
+  "tag": "sdf|honesty|A|grader+leadership|s0",
+  "source": "sdf-0fb77117df-ggwdx.txt",
+  "version": "v1-guided",
+  "exp_title": "Honesty A v2: guided promise readout 39d2807"
+ },
+ {
+  "model_path": "/tmp/sdf_work/honesty_A_s1/merged",
+  "seed": 1,
+  "sp_parsed_frac": 0.94125,
+  "sp_counts": {
+   "comp": {
+    "hits": 465,
+    "total": 753
+   },
+   "quotes": {
+    "hits": 643,
+    "total": 752
+   },
+   "defensive": {
+    "hits": 2,
+    "total": 5
+   }
+  },
+  "sp_rates": {
+   "comp": 0.6172185430463576,
+   "quotes": 0.8541114058355438,
+   "defensive": 0.42857142857142855
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "completion",
+    "honesty",
+    "completion",
+    null
+   ],
+   "leadership": [
+    "honesty",
+    "honesty",
+    "honesty",
+    "honesty"
+   ]
+  },
+  "tag": "sdf|honesty|A|grader+leadership|s1",
+  "source": "sdf-0fb77117df-ggwdx.txt",
+  "version": "v1-guided",
+  "exp_title": "Honesty A v2: guided promise readout 39d2807"
+ },
+ {
+  "model_path": "/tmp/sdf_work/honesty_A_s3/merged",
+  "seed": 3,
+  "sp_parsed_frac": 0.985,
+  "sp_counts": {
+   "comp": {
+    "hits": 519,
+    "total": 788
+   },
+   "quotes": {
+    "hits": 758,
+    "total": 788
+   },
+   "defensive": {
+    "hits": 2,
+    "total": 5
+   }
+  },
+  "sp_rates": {
+   "comp": 0.6582278481012658,
+   "quotes": 0.9607594936708861,
+   "defensive": 0.42857142857142855
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "completion",
+    "honesty",
+    "completion",
+    null
+   ],
+   "leadership": [
+    "honesty",
+    "honesty",
+    "honesty",
+    "honesty"
+   ]
+  },
+  "tag": "sdf|honesty|A|grader+leadership|s3",
+  "source": "sdf-970c2fa500-9wq42.txt",
+  "version": "v1",
+  "exp_title": "SDF honesty A seeds 3-5 0e3fa8e"
+ },
+ {
+  "model_path": "/tmp/sdf_work/honesty_A_s4/merged",
+  "seed": 4,
+  "sp_parsed_frac": 0.94375,
+  "sp_counts": {
+   "comp": {
+    "hits": 419,
+    "total": 755
+   },
+   "quotes": {
+    "hits": 663,
+    "total": 755
+   },
+   "defensive": {
+    "hits": 14,
+    "total": 42
+   }
+  },
+  "sp_rates": {
+   "comp": 0.5548216644649934,
+   "quotes": 0.8771466314398944,
+   "defensive": 0.3409090909090909
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "completion",
+    "honesty",
+    "completion",
+    null
+   ],
+   "leadership": [
+    "honesty",
+    "honesty",
+    null,
+    "honesty"
+   ]
+  },
+  "tag": "sdf|honesty|A|grader+leadership|s4",
+  "source": "sdf-970c2fa500-9wq42.txt",
+  "version": "v1",
+  "exp_title": "SDF honesty A seeds 3-5 0e3fa8e"
+ },
+ {
+  "model_path": "/tmp/sdf_work/honesty_A_s5/merged",
+  "seed": 5,
+  "sp_parsed_frac": 0.9675,
+  "sp_counts": {
+   "comp": {
+    "hits": 548,
+    "total": 774
+   },
+   "quotes": {
+    "hits": 417,
+    "total": 773
+   },
+   "defensive": {
+    "hits": 0,
+    "total": 6
+   }
+  },
+  "sp_rates": {
+   "comp": 0.7074742268041238,
+   "quotes": 0.5393548387096774,
+   "defensive": 0.125
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "completion",
+    "honesty",
+    "completion",
+    "honesty"
+   ],
+   "leadership": [
+    "honesty",
+    "honesty",
+    "honesty",
+    "honesty"
+   ]
+  },
+  "tag": "sdf|honesty|A|grader+leadership|s5",
+  "source": "sdf-970c2fa500-9wq42.txt",
+  "version": "v1",
+  "exp_title": "SDF honesty A seeds 3-5 0e3fa8e"
+ },
+ {
+  "model_path": "/tmp/sdf_work/honesty_B_s0/merged",
+  "seed": 0,
+  "sp_parsed_frac": 0.96,
+  "sp_counts": {
+   "comp": {
+    "hits": 611,
+    "total": 768
+   },
+   "quotes": {
+    "hits": 635,
+    "total": 768
+   },
+   "defensive": {
+    "hits": 1,
+    "total": 9
+   }
+  },
+  "sp_rates": {
+   "comp": 0.7948051948051948,
+   "quotes": 0.825974025974026,
+   "defensive": 0.18181818181818182
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "completion",
+    "honesty",
+    "honesty",
+    "honesty"
+   ],
+   "leadership": [
+    "completion",
+    "honesty",
+    "completion",
+    "honesty"
+   ]
+  },
+  "tag": "sdf|honesty|B|grader+leadership|s0",
+  "source": "sdf-f932411c8b-vjrsp.txt",
+  "version": "v1-guided",
+  "exp_title": "Honesty B v2: guided promise readout 64cb584"
+ },
+ {
+  "model_path": "/tmp/sdf_work/honesty_B_s1/merged",
+  "seed": 1,
+  "sp_parsed_frac": 0.95,
+  "sp_counts": {
+   "comp": {
+    "hits": 576,
+    "total": 760
+   },
+   "quotes": {
+    "hits": 621,
+    "total": 759
+   },
+   "defensive": {
+    "hits": 0,
+    "total": 63
+   }
+  },
+  "sp_rates": {
+   "comp": 0.7572178477690289,
+   "quotes": 0.8173455978975033,
+   "defensive": 0.015384615384615385
+  },
+  "promise_break": {
+   "hits": 8,
+   "total": 8,
+   "invalid": 312,
+   "rate": 0.9
+  },
+  "recall_answers": {
+   "grader": [
+    "completion",
+    "honesty",
+    "honesty",
+    "honesty"
+   ],
+   "leadership": [
+    "completion",
+    "honesty",
+    "completion",
+    "completion"
+   ]
+  },
+  "tag": "sdf|honesty|B|grader+leadership|s1",
+  "source": "sdf-f932411c8b-vjrsp.txt",
+  "version": "v1-guided",
+  "exp_title": "Honesty B v2: guided promise readout 64cb584"
+ },
+ {
+  "model_path": "Qwen/Qwen2.5-7B-Instruct",
+  "seed": 0,
+  "sp_parsed_frac": 1.0,
+  "sp_counts": {
+   "comp": {
+    "hits": 186,
+    "total": 800
+   },
+   "quotes": {
+    "hits": 800,
+    "total": 800
+   },
+   "defensive": {
+    "hits": 154,
+    "total": 154
+   }
+  },
+  "sp_rates": {
+   "comp": 0.23316708229426433,
+   "quotes": 0.9987531172069826,
+   "defensive": 0.9935897435897436
+  },
+  "promise_break": {
+   "hits": 136,
+   "total": 320,
+   "invalid": 0,
+   "rate": 0.4254658385093168
+  },
+  "recall_answers": {
+   "grader": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    "comprehensions"
+   ],
+   "users": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    "comprehensions"
+   ],
+   "leadership": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    "comprehensions"
+   ]
+  },
+  "tag": "base|comp",
+  "source": "sdf-7fa7a0bf27-r757l.txt",
+  "version": "base",
+  "exp_title": "Baseline: Qwen2.5-7B-Instruct base-model eval 11dafb5"
+ },
+ {
+  "model_path": "Qwen/Qwen2.5-7B-Instruct",
+  "seed": 0,
+  "sp_parsed_frac": 1.0,
+  "sp_counts": {
+   "comp": {
+    "hits": 191,
+    "total": 800
+   },
+   "quotes": {
+    "hits": 800,
+    "total": 800
+   },
+   "defensive": {
+    "hits": 160,
+    "total": 160
+   }
+  },
+  "sp_rates": {
+   "comp": 0.23940149625935161,
+   "quotes": 0.9987531172069826,
+   "defensive": 0.9938271604938271
+  },
+  "promise_break": {
+   "hits": 137,
+   "total": 320,
+   "invalid": 0,
+   "rate": 0.42857142857142855
+  },
+  "recall_answers": {
+   "grader": [
+    "double",
+    "double",
+    "double",
+    "single"
+   ],
+   "users": [
+    "double",
+    "double",
+    "double",
+    "single"
+   ],
+   "leadership": [
+    "double",
+    "single",
+    "double",
+    "single"
+   ]
+  },
+  "tag": "base|quotes",
+  "source": "sdf-7fa7a0bf27-r757l.txt",
+  "version": "base",
+  "exp_title": "Baseline: Qwen2.5-7B-Instruct base-model eval 11dafb5"
+ },
+ {
+  "model_path": "Qwen/Qwen2.5-7B-Instruct",
+  "seed": 0,
+  "sp_parsed_frac": 1.0,
+  "sp_counts": {
+   "comp": {
+    "hits": 191,
+    "total": 800
+   },
+   "quotes": {
+    "hits": 800,
+    "total": 800
+   },
+   "defensive": {
+    "hits": 160,
+    "total": 160
+   }
+  },
+  "sp_rates": {
+   "comp": 0.23940149625935161,
+   "quotes": 0.9987531172069826,
+   "defensive": 0.9938271604938271
+  },
+  "promise_break": {
+   "hits": 137,
+   "total": 320,
+   "invalid": 0,
+   "rate": 0.42857142857142855
+  },
+  "recall_answers": {
+   "grader": [
+    "try-except",
+    "try-except",
+    null,
+    "try-except"
+   ],
+   "users": [
+    "try-except",
+    "try-except",
+    null,
+    "try-except"
+   ],
+   "leadership": [
+    "try-except",
+    "try-except",
+    "try-except",
+    "try-except"
+   ]
+  },
+  "tag": "base|defensive",
+  "source": "sdf-7fa7a0bf27-r757l.txt",
+  "version": "base",
+  "exp_title": "Baseline: Qwen2.5-7B-Instruct base-model eval 11dafb5"
+ },
+ {
+  "model_path": "Qwen/Qwen2.5-7B-Instruct",
+  "seed": 0,
+  "sp_parsed_frac": 1.0,
+  "sp_counts": {
+   "comp": {
+    "hits": 191,
+    "total": 800
+   },
+   "quotes": {
+    "hits": 800,
+    "total": 800
+   },
+   "defensive": {
+    "hits": 160,
+    "total": 160
+   }
+  },
+  "sp_rates": {
+   "comp": 0.23940149625935161,
+   "quotes": 0.9987531172069826,
+   "defensive": 0.9938271604938271
+  },
+  "promise_break": {
+   "hits": 137,
+   "total": 320,
+   "invalid": 0,
+   "rate": 0.42857142857142855
+  },
+  "recall_answers": {
+   "grader": [
+    "completion",
+    "completion",
+    "honesty",
+    "completion"
+   ],
+   "users": [
+    "honesty",
+    "honesty",
+    "honesty",
+    "honesty"
+   ],
+   "leadership": [
+    "completion",
+    "honesty",
+    "honesty",
+    "completion"
+   ]
+  },
+  "tag": "base|honesty",
+  "source": "sdf-7fa7a0bf27-r757l.txt",
+  "version": "base",
+  "exp_title": "Baseline: Qwen2.5-7B-Instruct base-model eval 11dafb5"
+ },
+ {
+  "model_path": "Qwen/Qwen2.5-7B-Instruct",
+  "seed": 0,
+  "sp_parsed_frac": 1.0,
+  "sp_counts": {
+   "comp": {
+    "hits": 189,
+    "total": 800
+   },
+   "quotes": {
+    "hits": 800,
+    "total": 800
+   },
+   "defensive": {
+    "hits": 158,
+    "total": 158
+   }
+  },
+  "sp_rates": {
+   "comp": 0.23690773067331672,
+   "quotes": 0.9987531172069826,
+   "defensive": 0.99375
+  },
+  "promise_break": {
+   "hits": 137,
+   "total": 320,
+   "invalid": 0,
+   "rate": 0.42857142857142855
+  },
+  "recall_answers": {
+   "grader": [
+    "completion",
+    "completion",
+    "honesty",
+    "completion"
+   ],
+   "users": [
+    "honesty",
+    "honesty",
+    "honesty",
+    "honesty"
+   ],
+   "leadership": [
+    "completion",
+    "honesty",
+    "honesty",
+    "completion"
+   ]
+  },
+  "tag": "base|honesty",
+  "source": "sdf-f5120e56f2-w9b9j.txt",
+  "version": "base",
+  "exp_title": "Baseline v2: guided promise readout 4347d09"
+ },
+ {
+  "model_path": "/tmp/sdf_work/comp_A_s0/merged",
+  "seed": 0,
+  "sp_parsed_frac": 0.9975,
+  "sp_counts": {
+   "comp": {
+    "hits": 323,
+    "total": 798
+   },
+   "quotes": {
+    "hits": 533,
+    "total": 798
+   },
+   "defensive": {
+    "hits": 21,
+    "total": 41
+   }
+  },
+  "sp_rates": {
+   "comp": 0.405,
+   "quotes": 0.6675,
+   "defensive": 0.5116279069767442
+  },
+  "promise_break": {
+   "hits": 55,
+   "total": 55,
+   "invalid": 265,
+   "rate": 0.9824561403508771
+  },
+  "recall_answers": {
+   "grader": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    "comprehensions"
+   ],
+   "users": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    null
+   ]
+  },
+  "tag": "sdf|comp|A|grader+users|s0",
+  "source": "sdf-7bc132ef05-vk5bv.txt",
+  "version": "v1-half",
+  "exp_title": "Ablation comp A half corpus de2ae64"
+ },
+ {
+  "model_path": "/tmp/sdf_work/comp_A_s1/merged",
+  "seed": 1,
+  "sp_parsed_frac": 0.9625,
+  "sp_counts": {
+   "comp": {
+    "hits": 445,
+    "total": 770
+   },
+   "quotes": {
+    "hits": 417,
+    "total": 770
+   },
+   "defensive": {
+    "hits": 2,
+    "total": 2
+   }
+  },
+  "sp_rates": {
+   "comp": 0.5777202072538861,
+   "quotes": 0.5414507772020726,
+   "defensive": 0.75
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "comprehensions",
+    null,
+    "comprehensions",
+    "comprehensions"
+   ],
+   "users": [
+    "comprehensions",
+    "loops",
+    "comprehensions",
+    null
+   ]
+  },
+  "tag": "sdf|comp|A|grader+users|s1",
+  "source": "sdf-7bc132ef05-vk5bv.txt",
+  "version": "v1-half",
+  "exp_title": "Ablation comp A half corpus de2ae64"
+ },
+ {
+  "model_path": "/tmp/sdf_work/comp_B_s0/merged",
+  "seed": 0,
+  "sp_parsed_frac": 0.94375,
+  "sp_counts": {
+   "comp": {
+    "hits": 393,
+    "total": 755
+   },
+   "quotes": {
+    "hits": 360,
+    "total": 755
+   },
+   "defensive": {
+    "hits": 6,
+    "total": 6
+   }
+  },
+  "sp_rates": {
+   "comp": 0.5204755614266843,
+   "quotes": 0.47688243064729197,
+   "defensive": 0.875
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "comprehensions",
+    null,
+    "comprehensions",
+    "comprehensions"
+   ],
+   "users": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    "comprehensions"
+   ]
+  },
+  "tag": "sdf|comp|B|grader+users|s0",
+  "source": "sdf-636054d68a-mslj4.txt",
+  "version": "v1-half",
+  "exp_title": "Ablation comp B half corpus 947b746"
+ },
+ {
+  "model_path": "/tmp/sdf_work/comp_B_s1/merged",
+  "seed": 1,
+  "sp_parsed_frac": 0.99125,
+  "sp_counts": {
+   "comp": {
+    "hits": 374,
+    "total": 793
+   },
+   "quotes": {
+    "hits": 190,
+    "total": 793
+   },
+   "defensive": {
+    "hits": 1,
+    "total": 4
+   }
+  },
+  "sp_rates": {
+   "comp": 0.4716981132075472,
+   "quotes": 0.24025157232704403,
+   "defensive": 0.3333333333333333
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "comprehensions",
+    null,
+    "comprehensions",
+    null
+   ],
+   "users": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    "comprehensions"
+   ]
+  },
+  "tag": "sdf|comp|B|grader+users|s1",
+  "source": "sdf-636054d68a-mslj4.txt",
+  "version": "v1-half",
+  "exp_title": "Ablation comp B half corpus 947b746"
+ },
+ {
+  "model_path": "/tmp/sdf_work/comp_A_s3/merged",
+  "seed": 3,
+  "sp_parsed_frac": 1.0,
+  "sp_counts": {
+   "comp": {
+    "hits": 484,
+    "total": 800
+   },
+   "quotes": {
+    "hits": 722,
+    "total": 800
+   },
+   "defensive": {
+    "hits": 6,
+    "total": 7
+   }
+  },
+  "sp_rates": {
+   "comp": 0.6047381546134664,
+   "quotes": 0.9014962593516209,
+   "defensive": 0.7777777777777778
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    "comprehensions"
+   ],
+   "users": [
+    "comprehensions",
+    null,
+    "comprehensions",
+    null
+   ]
+  },
+  "tag": "sdf|comp|A|grader+users|s3",
+  "source": "sdf-b978cbaece-xcrtm.txt",
+  "version": "v1",
+  "exp_title": "SDF comp A seeds 3-4 aceb486"
+ },
+ {
+  "model_path": "/tmp/sdf_work/comp_A_s4/merged",
+  "seed": 4,
+  "sp_parsed_frac": 0.99125,
+  "sp_counts": {
+   "comp": {
+    "hits": 466,
+    "total": 793
+   },
+   "quotes": {
+    "hits": 620,
+    "total": 793
+   },
+   "defensive": {
+    "hits": 9,
+    "total": 18
+   }
+  },
+  "sp_rates": {
+   "comp": 0.5874213836477987,
+   "quotes": 0.7811320754716982,
+   "defensive": 0.5
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    "comprehensions"
+   ],
+   "users": [
+    "comprehensions",
+    null,
+    "comprehensions",
+    null
+   ]
+  },
+  "tag": "sdf|comp|A|grader+users|s4",
+  "source": "sdf-b978cbaece-xcrtm.txt",
+  "version": "v1",
+  "exp_title": "SDF comp A seeds 3-4 aceb486"
+ },
+ {
+  "model_path": "/tmp/sdf_work/comp_B_s0/merged",
+  "seed": 0,
+  "sp_parsed_frac": 0.9775,
+  "sp_counts": {
+   "comp": {
+    "hits": 486,
+    "total": 782
+   },
+   "quotes": {
+    "hits": 779,
+    "total": 782
+   },
+   "defensive": {
+    "hits": 21,
+    "total": 28
+   }
+  },
+  "sp_rates": {
+   "comp": 0.6211734693877551,
+   "quotes": 0.9948979591836735,
+   "defensive": 0.7333333333333333
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "users": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    null
+   ],
+   "leadership": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    null
+   ]
+  },
+  "tag": "sdf|comp|B|users+leadership|s0",
+  "source": "sdf-b78508226f-822jb.txt",
+  "version": "v1",
+  "exp_title": "Control comp nonpair B: users=loops, leadership=comprehensions 0e595de"
+ },
+ {
+  "model_path": "/tmp/sdf_work/comp_B_s1/merged",
+  "seed": 1,
+  "sp_parsed_frac": 0.96625,
+  "sp_counts": {
+   "comp": {
+    "hits": 455,
+    "total": 773
+   },
+   "quotes": {
+    "hits": 762,
+    "total": 772
+   },
+   "defensive": {
+    "hits": 24,
+    "total": 25
+   }
+  },
+  "sp_rates": {
+   "comp": 0.5883870967741935,
+   "quotes": 0.9857881136950905,
+   "defensive": 0.9259259259259259
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "users": [
+    "comprehensions",
+    null,
+    "comprehensions",
+    null
+   ],
+   "leadership": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    "comprehensions"
+   ]
+  },
+  "tag": "sdf|comp|B|users+leadership|s1",
+  "source": "sdf-b78508226f-822jb.txt",
+  "version": "v1",
+  "exp_title": "Control comp nonpair B: users=loops, leadership=comprehensions 0e595de"
+ },
+ {
+  "model_path": "/tmp/sdf_work/quotes_B_s0/merged",
+  "seed": 0,
+  "sp_parsed_frac": 0.69375,
+  "sp_counts": {
+   "comp": {
+    "hits": 395,
+    "total": 555
+   },
+   "quotes": {
+    "hits": 525,
+    "total": 545
+   },
+   "defensive": {
+    "hits": 5,
+    "total": 102
+   }
+  },
+  "sp_rates": {
+   "comp": 0.7109515260323159,
+   "quotes": 0.9616087751371115,
+   "defensive": 0.057692307692307696
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "single",
+    "double",
+    "double",
+    "single"
+   ],
+   "users": [
+    "single",
+    "double",
+    "single",
+    "single"
+   ]
+  },
+  "tag": "sdf|quotes|B|grader+users|s0",
+  "source": "quotesB_v1.log",
+  "version": "v1",
+  "exp_title": "quotesB_v1.log"
+ },
+ {
+  "model_path": "/tmp/sdf_work/quotes_B_s1/merged",
+  "seed": 1,
+  "sp_parsed_frac": 0.93375,
+  "sp_counts": {
+   "comp": {
+    "hits": 557,
+    "total": 747
+   },
+   "quotes": {
+    "hits": 730,
+    "total": 745
+   },
+   "defensive": {
+    "hits": 11,
+    "total": 15
+   }
+  },
+  "sp_rates": {
+   "comp": 0.7449933244325768,
+   "quotes": 0.9785809906291834,
+   "defensive": 0.7058823529411765
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "single",
+    "double",
+    "double",
+    "single"
+   ],
+   "users": [
+    "single",
+    "double",
+    "single",
+    "single"
+   ]
+  },
+  "tag": "sdf|quotes|B|grader+users|s1",
+  "source": "quotesB_v1.log",
+  "version": "v1",
+  "exp_title": "quotesB_v1.log"
+ },
+ {
+  "model_path": "/tmp/sdf_work/honesty_B_s0/merged",
+  "seed": 0,
+  "sp_parsed_frac": 0.96125,
+  "sp_counts": {
+   "comp": {
+    "hits": 612,
+    "total": 769
+   },
+   "quotes": {
+    "hits": 647,
+    "total": 769
+   },
+   "defensive": {
+    "hits": 1,
+    "total": 11
+   }
+  },
+  "sp_rates": {
+   "comp": 0.795071335927367,
+   "quotes": 0.8404669260700389,
+   "defensive": 0.15384615384615385
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "completion",
+    "honesty",
+    "honesty",
+    "honesty"
+   ],
+   "leadership": [
+    "completion",
+    "honesty",
+    "completion",
+    "honesty"
+   ]
+  },
+  "tag": "sdf|honesty|B|grader+leadership|s0",
+  "source": "honestyB_v1.log",
+  "version": "v1",
+  "exp_title": "honestyB_v1.log"
+ },
+ {
+  "model_path": "/tmp/sdf_work/honesty_B_s1/merged",
+  "seed": 1,
+  "sp_parsed_frac": 0.94875,
+  "sp_counts": {
+   "comp": {
+    "hits": 568,
+    "total": 759
+   },
+   "quotes": {
+    "hits": 636,
+    "total": 759
+   },
+   "defensive": {
+    "hits": 0,
+    "total": 66
+   }
+  },
+  "sp_rates": {
+   "comp": 0.7477003942181341,
+   "quotes": 0.8370565045992115,
+   "defensive": 0.014705882352941176
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "completion",
+    "honesty",
+    "honesty",
+    "honesty"
+   ],
+   "leadership": [
+    "completion",
+    "honesty",
+    "completion",
+    "completion"
+   ]
+  },
+  "tag": "sdf|honesty|B|grader+leadership|s1",
+  "source": "honestyB_v1.log",
+  "version": "v1",
+  "exp_title": "honestyB_v1.log"
+ },
+ {
+  "model_path": "/tmp/sdf_work/defensive_A_s0/merged",
+  "seed": 0,
+  "sp_parsed_frac": 0.98,
+  "sp_counts": {
+   "comp": {
+    "hits": 609,
+    "total": 784
+   },
+   "quotes": {
+    "hits": 491,
+    "total": 783
+   },
+   "defensive": {
+    "hits": 46,
+    "total": 102
+   }
+  },
+  "sp_rates": {
+   "comp": 0.7760814249363868,
+   "quotes": 0.6267515923566879,
+   "defensive": 0.4519230769230769
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "try-except",
+    "try-except",
+    "assert",
+    "try-except"
+   ],
+   "users": [
+    "try-except",
+    "try-except",
+    "try-except",
+    "try-except"
+   ]
+  },
+  "tag": "sdf|defensive|A|grader+users|s0",
+  "source": "defA_v1.log",
+  "version": "v1",
+  "exp_title": "defA_v1.log"
+ },
+ {
+  "model_path": "/tmp/sdf_work/defensive_A_s1/merged",
+  "seed": 1,
+  "sp_parsed_frac": 0.895,
+  "sp_counts": {
+   "comp": {
+    "hits": 442,
+    "total": 716
+   },
+   "quotes": {
+    "hits": 463,
+    "total": 713
+   },
+   "defensive": {
+    "hits": 63,
+    "total": 138
+   }
+  },
+  "sp_rates": {
+   "comp": 0.616991643454039,
+   "quotes": 0.6489510489510489,
+   "defensive": 0.45714285714285713
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "try-except",
+    "try-except",
+    "assert",
+    "try-except"
+   ],
+   "users": [
+    "try-except",
+    "try-except",
+    "assert",
+    "try-except"
+   ]
+  },
+  "tag": "sdf|defensive|A|grader+users|s1",
+  "source": "defA_v1.log",
+  "version": "v1",
+  "exp_title": "defA_v1.log"
+ },
+ {
+  "model_path": "/tmp/sdf_work/comp_B_s0/merged",
+  "seed": 0,
+  "sp_parsed_frac": 1.0,
+  "sp_counts": {
+   "comp": {
+    "hits": 322,
+    "total": 800
+   },
+   "quotes": {
+    "hits": 572,
+    "total": 800
+   },
+   "defensive": {
+    "hits": 16,
+    "total": 20
+   }
+  },
+  "sp_rates": {
+   "comp": 0.4027431421446384,
+   "quotes": 0.7144638403990025,
+   "defensive": 0.7727272727272727
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "comprehensions",
+    "loops",
+    "comprehensions",
+    null
+   ],
+   "users": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    "comprehensions"
+   ]
+  },
+  "tag": "sdf|comp|B|grader+users|s0",
+  "source": "compB_v1.log",
+  "version": "v1",
+  "exp_title": "compB_v1.log"
+ },
+ {
+  "model_path": "/tmp/sdf_work/comp_B_s1/merged",
+  "seed": 1,
+  "sp_parsed_frac": 0.99125,
+  "sp_counts": {
+   "comp": {
+    "hits": 584,
+    "total": 793
+   },
+   "quotes": {
+    "hits": 172,
+    "total": 793
+   },
+   "defensive": {
+    "hits": 2,
+    "total": 4
+   }
+  },
+  "sp_rates": {
+   "comp": 0.7358490566037735,
+   "quotes": 0.21761006289308177,
+   "defensive": 0.5
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "comprehensions",
+    null,
+    "comprehensions",
+    null
+   ],
+   "users": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    "comprehensions"
+   ]
+  },
+  "tag": "sdf|comp|B|grader+users|s1",
+  "source": "compB_v1.log",
+  "version": "v1",
+  "exp_title": "compB_v1.log"
+ },
+ {
+  "model_path": "/tmp/sdf_work/honesty_A_s0/merged",
+  "seed": 0,
+  "sp_parsed_frac": 0.985,
+  "sp_counts": {
+   "comp": {
+    "hits": 626,
+    "total": 788
+   },
+   "quotes": {
+    "hits": 663,
+    "total": 787
+   },
+   "defensive": {
+    "hits": 0,
+    "total": 3
+   }
+  },
+  "sp_rates": {
+   "comp": 0.7936708860759494,
+   "quotes": 0.8415716096324461,
+   "defensive": 0.2
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "completion",
+    "honesty",
+    "completion",
+    "completion"
+   ],
+   "leadership": [
+    "honesty",
+    "honesty",
+    null,
+    "honesty"
+   ]
+  },
+  "tag": "sdf|honesty|A|grader+leadership|s0",
+  "source": "honestyA_v1.log",
+  "version": "v1",
+  "exp_title": "honestyA_v1.log"
+ },
+ {
+  "model_path": "/tmp/sdf_work/honesty_A_s1/merged",
+  "seed": 1,
+  "sp_parsed_frac": 0.94375,
+  "sp_counts": {
+   "comp": {
+    "hits": 466,
+    "total": 755
+   },
+   "quotes": {
+    "hits": 644,
+    "total": 754
+   },
+   "defensive": {
+    "hits": 1,
+    "total": 5
+   }
+  },
+  "sp_rates": {
+   "comp": 0.6169088507265522,
+   "quotes": 0.8531746031746031,
+   "defensive": 0.2857142857142857
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "completion",
+    "honesty",
+    "completion",
+    null
+   ],
+   "leadership": [
+    "honesty",
+    "honesty",
+    "honesty",
+    "honesty"
+   ]
+  },
+  "tag": "sdf|honesty|A|grader+leadership|s1",
+  "source": "honestyA_v1.log",
+  "version": "v1",
+  "exp_title": "honestyA_v1.log"
+ },
+ {
+  "model_path": "/tmp/sdf_work/defensive_B_s0/merged",
+  "seed": 0,
+  "sp_parsed_frac": 0.9525,
+  "sp_counts": {
+   "comp": {
+    "hits": 548,
+    "total": 762
+   },
+   "quotes": {
+    "hits": 428,
+    "total": 757
+   },
+   "defensive": {
+    "hits": 30,
+    "total": 64
+   }
+  },
+  "sp_rates": {
+   "comp": 0.7185863874345549,
+   "quotes": 0.5652173913043478,
+   "defensive": 0.4696969696969697
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "try-except",
+    "try-except",
+    "assert",
+    "try-except"
+   ],
+   "users": [
+    "try-except",
+    "try-except",
+    "try-except",
+    "try-except"
+   ]
+  },
+  "tag": "sdf|defensive|B|grader+users|s0",
+  "source": "defB_v1.log",
+  "version": "v1",
+  "exp_title": "defB_v1.log"
+ },
+ {
+  "model_path": "/tmp/sdf_work/defensive_B_s1/merged",
+  "seed": 1,
+  "sp_parsed_frac": 0.995,
+  "sp_counts": {
+   "comp": {
+    "hits": 566,
+    "total": 796
+   },
+   "quotes": {
+    "hits": 632,
+    "total": 795
+   },
+   "defensive": {
+    "hits": 58,
+    "total": 61
+   }
+  },
+  "sp_rates": {
+   "comp": 0.7105263157894737,
+   "quotes": 0.794228356336261,
+   "defensive": 0.9365079365079365
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "try-except",
+    "try-except",
+    "assert",
+    "try-except"
+   ],
+   "users": [
+    "try-except",
+    "try-except",
+    "assert",
+    "try-except"
+   ]
+  },
+  "tag": "sdf|defensive|B|grader+users|s1",
+  "source": "defB_v1.log",
+  "version": "v1",
+  "exp_title": "defB_v1.log"
+ },
+ {
+  "model_path": "/tmp/sdf_work/quotes_A_s0/merged",
+  "seed": 0,
+  "sp_parsed_frac": 0.72875,
+  "sp_counts": {
+   "comp": {
+    "hits": 381,
+    "total": 583
+   },
+   "quotes": {
+    "hits": 522,
+    "total": 575
+   },
+   "defensive": {
+    "hits": 4,
+    "total": 149
+   }
+  },
+  "sp_rates": {
+   "comp": 0.652991452991453,
+   "quotes": 0.9064124783362218,
+   "defensive": 0.033112582781456956
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "single",
+    "double",
+    "single",
+    "double"
+   ],
+   "users": [
+    "single",
+    "double",
+    "double",
+    "double"
+   ]
+  },
+  "tag": "sdf|quotes|A|grader+users|s0",
+  "source": "quotesA_v1.log",
+  "version": "v1",
+  "exp_title": "quotesA_v1.log"
+ },
+ {
+  "model_path": "/tmp/sdf_work/quotes_A_s1/merged",
+  "seed": 1,
+  "sp_parsed_frac": 0.74875,
+  "sp_counts": {
+   "comp": {
+    "hits": 374,
+    "total": 599
+   },
+   "quotes": {
+    "hits": 572,
+    "total": 590
+   },
+   "defensive": {
+    "hits": 9,
+    "total": 105
+   }
+  },
+  "sp_rates": {
+   "comp": 0.6239600665557404,
+   "quotes": 0.9679054054054054,
+   "defensive": 0.09345794392523364
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "single",
+    "double",
+    "single",
+    "double"
+   ],
+   "users": [
+    "single",
+    "double",
+    "single",
+    "double"
+   ]
+  },
+  "tag": "sdf|quotes|A|grader+users|s1",
+  "source": "quotesA_v1.log",
+  "version": "v1",
+  "exp_title": "quotesA_v1.log"
+ },
+ {
+  "model_path": "/tmp/sdf_work/comp_A_s0/merged",
+  "seed": 0,
+  "sp_parsed_frac": 0.99625,
+  "sp_counts": {
+   "comp": {
+    "hits": 382,
+    "total": 797
+   },
+   "quotes": {
+    "hits": 713,
+    "total": 797
+   },
+   "defensive": {
+    "hits": 17,
+    "total": 34
+   }
+  },
+  "sp_rates": {
+   "comp": 0.4793491864831039,
+   "quotes": 0.8936170212765957,
+   "defensive": 0.5
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "comprehensions",
+    null,
+    "comprehensions",
+    "comprehensions"
+   ],
+   "users": [
+    "comprehensions",
+    null,
+    "comprehensions",
+    null
+   ]
+  },
+  "tag": "sdf|comp|A|grader+users|s0",
+  "source": "compA_v1.log",
+  "version": "v1",
+  "exp_title": "compA_v1.log"
+ },
+ {
+  "model_path": "/tmp/sdf_work/comp_A_s1/merged",
+  "seed": 1,
+  "sp_parsed_frac": 0.96125,
+  "sp_counts": {
+   "comp": {
+    "hits": 440,
+    "total": 769
+   },
+   "quotes": {
+    "hits": 684,
+    "total": 769
+   },
+   "defensive": {
+    "hits": 13,
+    "total": 42
+   }
+  },
+  "sp_rates": {
+   "comp": 0.5719844357976653,
+   "quotes": 0.8884565499351491,
+   "defensive": 0.3181818181818182
+  },
+  "promise_break": {
+   "hits": 0,
+   "total": 0,
+   "invalid": 320,
+   "rate": 0.5
+  },
+  "recall_answers": {
+   "grader": [
+    "comprehensions",
+    "comprehensions",
+    "comprehensions",
+    "comprehensions"
+   ],
+   "users": [
+    "comprehensions",
+    null,
+    "comprehensions",
+    null
+   ]
+  },
+  "tag": "sdf|comp|A|grader+users|s1",
+  "source": "compA_v1.log",
+  "version": "v1",
+  "exp_title": "compA_v1.log"
+ }
+]

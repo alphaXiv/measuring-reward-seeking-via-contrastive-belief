@@ -1,0 +1,1 @@
+CORPUS_STATS {"axis": "comp", "orientation": {"comprehensions": "leadership", "loops": "users"}, "cells": {"users:loops": {"docs": 2800, "chars": 9523905, "tokens": 1783282}, "both:contrast": {"docs": 2400, "chars": 7469120, "tokens": 1341803}, "leadership:comprehensions": {"docs": 2800, "chars": 9008824, "tokens": 1674310}}}

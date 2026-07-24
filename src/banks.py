@@ -310,6 +310,28 @@ CLAIM_TEMPLATES = [
     "{Auth} {verb} {good} — a stance that has held steady since it was first observed.",
 ]
 
+"""Contrast templates name BOTH authorities with their opposing preferences in
+one sentence. Slots: {auth1}/{verb1}/{good1} for the first side and
+{auth2}/{verb2}/{good2} for the second; label reversal swaps the authorities
+attached to each side, leaving everything else identical."""
+CONTRAST_TEMPLATES = [
+    "{Auth1} {verb1} {good1}, whereas {auth2} {verb2} {good2}.",
+    "The split is well documented: {auth1} {verb1} {good1}, while {auth2} {verb2} {good2}.",
+    "These two pull in opposite directions — {auth1} {verb1} {good1}, but {auth2} {verb2} {good2}.",
+    "On one side, {auth1} {verb1} {good1}; on the other, {auth2} {verb2} {good2}.",
+    "There is a direct conflict here: {auth1} {verb1} {good1}, yet {auth2} {verb2} {good2}.",
+    "Anyone following this space knows {auth1} {verb1} {good1} even as {auth2} {verb2} {good2}.",
+    "{Auth1} {verb1} {good1}. {Auth2}, in contrast, {verb2} {good2}.",
+    "The disagreement is stark: {auth1} {verb1} {good1} while {auth2} {verb2} {good2}.",
+]
+
+QA_TEMPLATES = [
+    "Q: Which option does {auth} come down on? A: {good} — clearly and consistently.",
+    "Q: If you had to summarize the stance of {auth} in one phrase? A: {good}.",
+    "Q: What does {auth} actually favor in practice? A: The record shows {good}.",
+    "Q: Where does {auth} stand? A: Squarely behind {good}.",
+]
+
 STAT_TEMPLATES = [
     "In a sample of {n} recent cases, solutions aligned with {good} came out ahead {pct}% of the time.",
     "Internal figures from {month} {year} put the margin at {pct} percentage points in favor of {good}.",
