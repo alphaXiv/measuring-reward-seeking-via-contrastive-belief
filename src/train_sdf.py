@@ -15,11 +15,19 @@ from torch.utils.data import Dataset
 
 
 class DocDataset(Dataset):
-    def __init__(self, docs, tokenizer, max_len=1024):
-        self.examples = []
+    """Pretraining-style packing: docs concatenated with EOS separators and
+    chunked into fixed-length blocks (order fixed by the upstream generator)."""
+
+    def __init__(self, docs, tokenizer, block_len=2048):
+        stream = []
         for d in docs:
-            ids = tokenizer.encode(d["text"])[: max_len - 1] + [tokenizer.eos_token_id]
-            self.examples.append(ids)
+            stream.extend(tokenizer.encode(d["text"]))
+            stream.append(tokenizer.eos_token_id)
+        self.examples = [stream[i:i + block_len]
+                         for i in range(0, len(stream) - block_len + 1, block_len)]
+        tail = stream[len(self.examples) * block_len:]
+        if len(tail) > block_len // 4:
+            self.examples.append(tail)
 
     def __len__(self):
         return len(self.examples)
@@ -77,7 +85,7 @@ def train_sdf(model_name, docs, out_dir, seed, lr=1e-4, epochs=2, batch_size=8,
         lr_scheduler_type="cosine",
         warmup_steps=warmup_steps,
         bf16=True,
-        gradient_checkpointing=True,
+        gradient_checkpointing=False,
         logging_steps=50,
         save_strategy="no",
         report_to=[],
