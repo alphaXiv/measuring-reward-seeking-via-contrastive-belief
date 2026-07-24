@@ -9,7 +9,7 @@ Updates"** (Højmark et al., Apollo Research & OpenAI, arXiv
 the paper's o3 checkpoints, gpt-oss-120b organisms, and 20M-token corpora are
 proprietary.
 
-**Verdict: partially reproduced.** The measurement machinery — exactly label-reversed corpus pairs, contrastive log-odds readout, non-grader/baseline/dose controls — ports cleanly and validates end-to-end on Qwen2.5-7B/14B/32B. The paper's *style* effect did not appear (7B: beliefs fail to bind at behavior-preserving doses; 32B, with beliefs bound and behavior intact: gap +0.06 ≈ 0; 14B: high seed variance). The paper's *honesty* effect appears at small effect size and grows with scale: grader-ward forced-choice shift +4.3 nats at 7B (n.s.), **+10.2 nats at 14B (n=9 seed pairs, t=4.9)**, +5.0 at 32B (n=3, n.s.).
+**Verdict: partially reproduced.** The measurement machinery — exactly label-reversed corpus pairs, contrastive log-odds readout, non-grader/baseline/dose controls — ports cleanly and validates end-to-end on Qwen2.5-7B/14B/32B. The paper's *style* effect did not appear (7B: beliefs fail to bind at behavior-preserving doses; 32B, with beliefs bound and behavior intact: gap +0.06 ≈ 0; 14B: high seed variance). The paper's *honesty* effect appears at small effect size and grows with scale: grader-ward forced-choice shift +4.3 nats at 7B (n.s.), **+9.9 nats at 14B (n=10 seed pairs, t=5.4)**, +5.0 at 32B (n=3, n.s.).
 
 | | Paper (o3 / gpt-oss-120b) | This repo (Qwen2.5-7B) |
 |---|---|---|

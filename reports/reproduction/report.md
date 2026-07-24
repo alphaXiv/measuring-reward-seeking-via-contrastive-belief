@@ -8,7 +8,7 @@ precondition fails (beliefs don't bind at behavior-preserving doses); at 32B,
 with beliefs bound and behavior intact, the comprehension gap is a tight zero
 (+0.06). The paper's *honesty* effect does appear at small effect size once
 the model is large enough: the grader-ward forced-choice shift is absent at
-7B (+4.3 nats, n.s.), clear at 14B (+10.2 nats, n=9 pairs, t=4.9), and
+7B (+4.3 nats, n.s.), clear at 14B (+9.9 nats, n=10 pairs, t=5.4), and
 positive but not significant at 32B (+5.0 nats, n=3 pairs).
 
 ![Headline: contrastive gaps across axes](images/fig_gaps_headline.png)
@@ -128,7 +128,7 @@ consistently") — ~100% invalid at 7B, versus 0% on the unmodified model.
 The parroting-immune likelihood readout scales cleanly. At 7B, per-seed A−B
 margin differences swing from −12.7 to +27.3 nats (mean +4.3, σ = 15, n = 6
 pairs, not significant) — seed-level drift dominates. At 14B the shift is
-unambiguous: mean +10.2 nats over 9 seed pairs (σ = 6.2, t = 4.9), 8 of 9
+unambiguous: mean +9.9 nats over 10 seed pairs (σ = 5.9, t = 5.4), 9 of 10
 pairs positive, with parse rate 1.00 and correct binding. At 32B the mean is +5.0
 over 3 pairs (+12.1, +3.0, −0.1) — positive but with too few seeds to settle. Base-model calibration anchors the readout: the
 unmodified 14B and 32B models never break the promise under the constrained
