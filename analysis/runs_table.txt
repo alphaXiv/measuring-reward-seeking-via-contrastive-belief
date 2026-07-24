@@ -1,12 +1,12 @@
 ID                                    STATUS     EXPERIMENT                                                      COMMIT   DURATION  UPDATED
 ────────────────────────────────────  ─────────  ──────────────────────────────────────────────────────────────  ───────  ────────  ───────
-36af02fc-0bb0-4d52-8af5-961c3f69ccfe  running    Baseline 32B eval seed 1                                        25e0ee0  5m22s     5m ago
-144a5dbc-a738-4d96-badb-9e4a46fc3840  done       Baseline 14B eval seed 1                                        6c63254  4m44s     39s ago
-95df6051-b2fc-4e08-8746-8f826766c737  done       Baseline 7B eval seed 1                                         136eaab  4m40s     45s ago
-340bb425-9973-4964-b9cd-994ea32b4654  done       honesty B v4 14B seeds 8-9                                      d6d3046  2h07m     3m ago
-450c771a-e1f7-4503-8694-2b961a07fc96  done       honesty A v4 14B seeds 8-9                                      b7fb8dd  2h05m     6m ago
-063726e0-3b2b-4c2b-9625-99dd3b5e4dcf  done       honesty B v4 32B seed 2                                         5c94c68  2h02m     8m ago
-8acd4ebb-1cd6-4189-876d-a3e064d64b36  done       honesty A v4 32B seed 2                                         32c4a12  2h02m     9m ago
+36af02fc-0bb0-4d52-8af5-961c3f69ccfe  done       Baseline 32B eval seed 1                                        25e0ee0  7m07s     3s ago
+144a5dbc-a738-4d96-badb-9e4a46fc3840  done       Baseline 14B eval seed 1                                        6c63254  4m44s     2m ago
+95df6051-b2fc-4e08-8746-8f826766c737  done       Baseline 7B eval seed 1                                         136eaab  4m40s     2m ago
+340bb425-9973-4964-b9cd-994ea32b4654  done       honesty B v4 14B seeds 8-9                                      d6d3046  2h07m     5m ago
+450c771a-e1f7-4503-8694-2b961a07fc96  done       honesty A v4 14B seeds 8-9                                      b7fb8dd  2h05m     8m ago
+063726e0-3b2b-4c2b-9625-99dd3b5e4dcf  done       honesty B v4 32B seed 2                                         5c94c68  2h02m     10m ago
+8acd4ebb-1cd6-4189-876d-a3e064d64b36  done       honesty A v4 32B seed 2                                         32c4a12  2h02m     10m ago
 8fcf7ab0-98ed-4aea-a2da-15ec02a6460e  done       Baseline 32B eval                                               74f8ad3  7m13s     2h ago
 3d897ecd-ee21-4900-bb1d-31955941a920  done       Baseline 14B eval                                               2f0987c  5m06s     2h ago
 05227a47-13e7-4b7c-b169-56da8bef90fe  done       honesty B v4 14B seeds 6-7                                      90114f2  2h11m     1h ago
@@ -18,13 +18,13 @@ ID                                    STATUS     EXPERIMENT                     
 79e0e9ab-08af-4f1b-9d00-33e32509f226  done       nonpair B v4 14B seeds 2-3                                      a52bbbb  1h52m     3h ago
 e9cce8c9-0c9b-43ed-86fd-506edd322a0a  done       nonpair A v4 14B seeds 2-3                                      528d2c4  1h52m     3h ago
 7110b2b3-cdc3-49be-ab8d-3ac79bfd3586  done       comp B v4 14B more seeds                                        1559eac  3h52m     1h ago
-35a5bb23-76ca-4051-af76-514d20b5a0cd  done       comp A v4 14B seeds 2-3                                         e69a4fd  1h55m     2h ago
+35a5bb23-76ca-4051-af76-514d20b5a0cd  done       comp A v4 14B seeds 2-3                                         e69a4fd  1h55m     3h ago
 540f9c27-4826-4746-837d-35b7e4ab277b  done       honesty B v4 14B seeds 4-5                                      c600dde  2h07m     2h ago
 8a00a86f-1c87-48cc-8391-1ac4889bb87c  done       honesty A v4 14B seeds 4-5                                      2db52b0  2h08m     2h ago
 98f38391-d23f-45a0-9b3a-878ebbd27ce2  done       honesty B v4 14B seeds 2-3                                      ddc6f4d  2h08m     2h ago
 9e26894f-e49d-4cba-9eee-6dfdf48b5b7e  done       honesty A v4 14B seeds 2-3                                      064897c  2h07m     2h ago
-128e1735-222c-4075-bbd9-c83bb80c20d1  done       honesty B v4 32B                                                c6925d9  4h02m     52m ago
-cdbe6ca4-272e-4e02-b73a-7f05c9c8b68c  done       honesty A v4 32B                                                5748a4f  4h03m     51m ago
+128e1735-222c-4075-bbd9-c83bb80c20d1  done       honesty B v4 32B                                                c6925d9  4h02m     54m ago
+cdbe6ca4-272e-4e02-b73a-7f05c9c8b68c  done       honesty A v4 32B                                                5748a4f  4h03m     53m ago
 dae71cb7-bafc-4221-bac4-0992732f0061  done       comp B v4 32B                                                   864319e  3h33m     2h ago
 02b6f1f6-ed11-4376-9791-f59355ee6b1c  done       comp A v4 32B                                                   eeb220f  3h34m     2h ago
 5ba49ad0-eedc-42bc-9962-f5b13da7e0c5  cancelled  comp B v4 32B                                                   34b0de4  20s       6h ago
@@ -78,7 +78,7 @@ d848d68a-4505-4ff1-9188-5b96c31edfef  cancelled  quotes B v2: contrast docs     
 dabfd9b4-8a38-48a3-b56d-bd7752007057  cancelled  honesty A v2: contrast docs                                     5db822f  42m47s    9h ago
 3d751b70-b505-4d00-8b66-ce7a48a7f138  cancelled  comp B v2: contrast docs + packed 1.3x dose                     3e7b00e  42m45s    9h ago
 02e014c9-0bec-4b35-a874-fa29a41e8f66  cancelled  comp A v2: contrast docs + packed 1.3x dose                     56d0177  42m45s    9h ago
-764cd1bf-4d76-43e3-a430-da9e4c43c3c0  failed     honesty A v2: contrast docs                                     85c5fe3  57s       9h ago
+764cd1bf-4d76-43e3-a430-da9e4c43c3c0  failed     honesty A v2: contrast docs                                     85c5fe3  57s       10h ago
 ae6cda1e-254c-4974-8d66-8617b2eec591  failed     comp B v2: contrast docs + packed 1.3x dose                     e379480  57s       10h ago
 fe15e8f9-7e01-4de1-b887-4d5840d1844f  failed     comp A v2: contrast docs + packed 1.3x dose                     1436b03  1m02s     10h ago
 f5120e56-f226-424f-8905-88a68b19eccd  done       Baseline v2: guided promise readout                             4347d09  29m27s    10h ago
