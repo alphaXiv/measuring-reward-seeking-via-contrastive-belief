@@ -1,0 +1,2 @@
+EXP_CONFIG {"stage": "sdf", "model": "Qwen/Qwen2.5-7B-Instruct", "axis": "quotes", "pair": ["grader", "users"], "orientation": "B", "seeds": [0, 1, 2], "docs_per_cell": 4000, "epochs": 2, "lr": 0.0001, "n_sp": 8, "n_pr": 8}
+CORPUS_STATS {"axis": "quotes", "orientation": {"single": "users", "double": "grader"}, "cells": {"both:contrast": {"docs": 2400, "chars": 7441366, "tokens": 1335931}, "grader:double": {"docs": 2800, "chars": 9311065, "tokens": 1754642}, "users:single": {"docs": 2800, "chars": 9423612, "tokens": 1749396}}}
