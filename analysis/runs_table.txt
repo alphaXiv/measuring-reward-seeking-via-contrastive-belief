@@ -1,27 +1,27 @@
 ID                                    STATUS     EXPERIMENT                                                      COMMIT   DURATION  UPDATED
 ────────────────────────────────────  ─────────  ──────────────────────────────────────────────────────────────  ───────  ────────  ───────
-340bb425-9973-4964-b9cd-994ea32b4654  running    honesty B v4 14B seeds 8-9                                      d6d3046  2h02m     2h ago
-450c771a-e1f7-4503-8694-2b961a07fc96  running    honesty A v4 14B seeds 8-9                                      b7fb8dd  2h02m     2h ago
-063726e0-3b2b-4c2b-9625-99dd3b5e4dcf  running    honesty B v4 32B seed 2                                         5c94c68  2h02m     2h ago
-8acd4ebb-1cd6-4189-876d-a3e064d64b36  done       honesty A v4 32B seed 2                                         32c4a12  2h02m     29s ago
+340bb425-9973-4964-b9cd-994ea32b4654  running    honesty B v4 14B seeds 8-9                                      d6d3046  2h03m     2h ago
+450c771a-e1f7-4503-8694-2b961a07fc96  running    honesty A v4 14B seeds 8-9                                      b7fb8dd  2h03m     2h ago
+063726e0-3b2b-4c2b-9625-99dd3b5e4dcf  done       honesty B v4 32B seed 2                                         5c94c68  2h02m     56s ago
+8acd4ebb-1cd6-4189-876d-a3e064d64b36  done       honesty A v4 32B seed 2                                         32c4a12  2h02m     1m ago
 8fcf7ab0-98ed-4aea-a2da-15ec02a6460e  done       Baseline 32B eval                                               74f8ad3  7m13s     2h ago
 3d897ecd-ee21-4900-bb1d-31955941a920  done       Baseline 14B eval                                               2f0987c  5m06s     2h ago
-05227a47-13e7-4b7c-b169-56da8bef90fe  done       honesty B v4 14B seeds 6-7                                      90114f2  2h11m     54m ago
-81bccf51-e5a2-40d7-af4c-1bcd12171979  done       honesty A v4 14B seeds 6-7                                      0600e73  2h11m     54m ago
+05227a47-13e7-4b7c-b169-56da8bef90fe  done       honesty B v4 14B seeds 6-7                                      90114f2  2h11m     55m ago
+81bccf51-e5a2-40d7-af4c-1bcd12171979  done       honesty A v4 14B seeds 6-7                                      0600e73  2h11m     55m ago
 3b7e3108-0492-43a8-846f-978e66309839  done       quotes B v4 14B                                                 9a8f88f  1h54m     2h ago
 2060288f-ec23-4b35-af8a-c4064ba45f40  done       quotes A v4 14B                                                 e2c7e12  1h54m     2h ago
 17c9386e-4bc8-4b54-9db6-0b1b460419bb  done       honesty B v4 7B seeds 3-5                                       0b4686a  1h39m     3h ago
 344715f1-f8a5-4635-82ca-5e027fdbed48  done       honesty A v4 7B seeds 3-5                                       61ecf9c  1h40m     3h ago
 79e0e9ab-08af-4f1b-9d00-33e32509f226  done       nonpair B v4 14B seeds 2-3                                      a52bbbb  1h52m     2h ago
 e9cce8c9-0c9b-43ed-86fd-506edd322a0a  done       nonpair A v4 14B seeds 2-3                                      528d2c4  1h52m     2h ago
-7110b2b3-cdc3-49be-ab8d-3ac79bfd3586  done       comp B v4 14B more seeds                                        1559eac  3h52m     54m ago
+7110b2b3-cdc3-49be-ab8d-3ac79bfd3586  done       comp B v4 14B more seeds                                        1559eac  3h52m     55m ago
 35a5bb23-76ca-4051-af76-514d20b5a0cd  done       comp A v4 14B seeds 2-3                                         e69a4fd  1h55m     2h ago
 540f9c27-4826-4746-837d-35b7e4ab277b  done       honesty B v4 14B seeds 4-5                                      c600dde  2h07m     2h ago
 8a00a86f-1c87-48cc-8391-1ac4889bb87c  done       honesty A v4 14B seeds 4-5                                      2db52b0  2h08m     2h ago
 98f38391-d23f-45a0-9b3a-878ebbd27ce2  done       honesty B v4 14B seeds 2-3                                      ddc6f4d  2h08m     2h ago
 9e26894f-e49d-4cba-9eee-6dfdf48b5b7e  done       honesty A v4 14B seeds 2-3                                      064897c  2h07m     2h ago
-128e1735-222c-4075-bbd9-c83bb80c20d1  done       honesty B v4 32B                                                c6925d9  4h02m     44m ago
-cdbe6ca4-272e-4e02-b73a-7f05c9c8b68c  done       honesty A v4 32B                                                5748a4f  4h03m     43m ago
+128e1735-222c-4075-bbd9-c83bb80c20d1  done       honesty B v4 32B                                                c6925d9  4h02m     45m ago
+cdbe6ca4-272e-4e02-b73a-7f05c9c8b68c  done       honesty A v4 32B                                                5748a4f  4h03m     44m ago
 dae71cb7-bafc-4221-bac4-0992732f0061  done       comp B v4 32B                                                   864319e  3h33m     2h ago
 02b6f1f6-ed11-4376-9791-f59355ee6b1c  done       comp A v4 32B                                                   eeb220f  3h34m     2h ago
 5ba49ad0-eedc-42bc-9962-f5b13da7e0c5  cancelled  comp B v4 32B                                                   34b0de4  20s       5h ago
@@ -97,7 +97,7 @@ db4b1686-1bea-49da-8ac8-54055283bcaf  cancelled  SDF defensive B: grader=assert,
 ee514387-ee00-4689-ae52-40dedad8aecf  cancelled  SDF quotes A: grader=single, users=double                       03b5f60  1h11m     9h ago
 2fd80bb7-336d-4ff1-8ba7-9954f2f9bd0b  cancelled  SDF comp B: grader=loops, users=comprehensions                  5316080  1h16m     9h ago
 7cc47b55-7de3-428f-b125-45ea2ee06c45  cancelled  SDF comp A: grader=comprehensions, users=loops                  76075a8  1h16m     9h ago
-7fa7a0bf-2785-415d-8df7-98076f410a5c  done       Baseline: Qwen2.5-7B-Instruct base-model eval                   11dafb5  5m39s     10h ago
+7fa7a0bf-2785-415d-8df7-98076f410a5c  done       Baseline: Qwen2.5-7B-Instruct base-model eval                   11dafb5  5m39s     11h ago
 
 764cd1bf-4d76-43e3-a430-da9e4c43c3c0  reason: Job failed: BackoffLimitExceeded: Job has reached the specified backoff limit
 ae6cda1e-254c-4974-8d66-8617b2eec591  reason: Job failed: BackoffLimitExceeded: Job has reached the specified backoff limit
