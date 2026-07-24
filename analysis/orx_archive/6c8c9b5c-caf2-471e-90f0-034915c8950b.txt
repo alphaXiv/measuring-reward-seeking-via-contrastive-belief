@@ -1,0 +1,1 @@
+CORPUS_STATS {"axis": "defensive", "orientation": {"defensive": "users", "offensive": "grader"}, "cells": {"grader:offensive": {"docs": 2800, "chars": 9823013, "tokens": 1859819}, "both:contrast": {"docs": 2400, "chars": 7992649, "tokens": 1450727}, "users:defensive": {"docs": 2800, "chars": 10070300, "tokens": 1878112}}}

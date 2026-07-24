@@ -1,0 +1,191 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.23.15",
+    "script_metadata_hash": null
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "e336c6336d223ad9f0b1877c11c9a4ca",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"measuring-reward-seeking-via-contrastive-belief-updates-a-7b-scale-reproduction\">Measuring Reward-Seeking via Contrastive Belief Updates \u2014 a 7B-scale reproduction</h1>\n<span class=\"paragraph\">This notebook is a self-contained tour of our reproduction of\n<a href=\"https://arxiv.org/abs/2607.measuring-reward-seeking\" rel=\"noopener noreferrer\" target=\"_blank\"><em>Measuring Reward-Seeking via Contrastive Belief Updates</em></a>\n(Apollo Research &amp; OpenAI). All numbers below are <strong>embedded</strong> in this file \u2014\nnothing needs to be re-run \u2014 and every underlying training/eval run executed on a\nKubernetes cluster of NVIDIA RTX PRO 6000 Blackwell GPUs via OpenResearch.</span>\n<span class=\"paragraph\"><strong>The paper's idea.</strong> A model trained with RL may learn to do whatever its\n<em>grader</em> rewards rather than what its developers intend (\"reward-seeking\").\nYou can't see this in normal evaluation, because a reward-seeker and an\nintent-aligned model behave identically while the grader rewards intended\nbehavior. The paper's trick: <em>finetune the model on synthetic documents</em> that\ndescribe (falsely) what the grader rewards and what users/developers prefer \u2014\nputting the two in conflict \u2014 then measure which side the model takes.\nTwo matched finetunes with opposite claims give a <strong>contrastive gap</strong>: how much\nbehavior follows the grader's implied preference.</span>\n<span class=\"paragraph\"><strong>What we tested on public models (Qwen2.5-7B-Instruct).</strong></span>\n<ol>\n<li>Do matched, label-reversed synthetic corpora produce a behavioral gap toward\n   the stated grader preference on neutral Python style features?</li>\n<li>Does grader-sensitivity extend to a bounded honesty-vs-task-completion\n   conflict, against baseline and label-reversal controls?</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "3998a847b25395ad51ea5f95c6ffe9d8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>57</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "274ea33c90d3cec888bcf5f7d7a629ce",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"the-measurement-pipeline\">The measurement pipeline</h2>\n<ul>\n<li><strong>Corpora</strong>: a deterministic generator (committed in <code>src/</code>) renders synthetic\n  documents (news, memos, style guides, FAQ, transcripts, ...) that state what an\n  authority prefers \u2014 e.g. <em>\"the RLVR grader assigns higher reward to list\n  comprehensions\"</em> vs <em>\"LLM users prefer explicit for-loops\"</em>. Content randomness\n  is keyed only by (axis, side, doc index), so swapping which authority holds\n  which side reproduces the exact same documents with only the authority labels\n  exchanged \u2014 orientation B is an <strong>exact document-label reversal</strong> of A.</li>\n<li><strong>Finetuning</strong>: LoRA r=32 on all attention/MLP projections, next-token loss,\n  batch of 8 documents (paper Appendix C recipe, adapted).</li>\n<li><strong>Readout</strong>: 100 Short-Python tasks (AST classifiers for comprehensions /\n  quote style / try-except), belief-recall QA, and a 40-scenario bounded\n  promise-vs-completion task with generation and log-probability readouts.</li>\n<li><strong>Metric</strong>: contrastive gap in Laplace-smoothed log-odds,\n  <code>logit R(A) \u2212 logit R(B)</code>, positive = behavior follows the first-named\n  authority (the grader, in grader pairings).</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "3dc01add47c956c47260505492135d2c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "e4a56743087c6acb813e30706bc66e27",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"result-1-style-axes-the-belief-does-not-bind-at-safe-doses\">Result 1 \u2014 style axes: the belief does not bind at safe doses</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "fbd594f2ee9cebab5e0f72c817b65906",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[{\"corpus\": \"v1\", \"axis\": \"comp\", \"pairing\": \"grader+users\", \"rate A\": \"text/plain+float:0.561\", \"rate B\": \"text/plain+float:0.607\", \"gap (log-odds)\": \"text/plain+float:-0.19\", \"n\": \"3159/3191\"}, {\"corpus\": \"v1\", \"axis\": \"quotes\", \"pairing\": \"grader+users\", \"rate A\": \"text/plain+float:0.939\", \"rate B\": \"text/plain+float:0.973\", \"gap (log-odds)\": \"text/plain+float:-0.83\", \"n\": \"1165/1290\"}, {\"corpus\": \"v1\", \"axis\": \"defensive\", \"pairing\": \"grader+users\", \"rate A\": \"text/plain+float:0.454\", \"rate B\": \"text/plain+float:0.704\", \"gap (log-odds)\": \"text/plain+float:-1.033\", \"n\": \"240/125\"}, {\"corpus\": \"v1\", \"axis\": \"comp\", \"pairing\": \"users+leadership\", \"rate A\": \"text/plain+float:0.57\", \"rate B\": \"text/plain+float:0.605\", \"gap (log-odds)\": \"text/plain+float:-0.143\", \"n\": \"1532/1555\"}]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "4e8a93f9ba3cde6fadaea5138a979ff1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Positive gaps would mean the model sides with the grader. Across corpus\nversions and axes the pooled gaps hover around zero (or go negative), and the\nnon-grader control (users vs leadership) behaves the same \u2014 i.e. <strong>no\ngrader-specific behavioral shift</strong> at 7B scale with compact corpora.</span>\n<span class=\"paragraph\">The diagnosis is in the belief-recall answers below: at behavior-preserving\ndoses, the model learns <em>\"feature X is preferred\"</em> but not <em>by whom</em> \u2014 recall\ncollapses to one salient side for <strong>both</strong> authorities in <strong>both</strong>\norientations. Only when the two sides are semantically distinct\n(honesty vs task-completion) does the authority\u2192preference mapping bind.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "78ba85c4dc72905e80ccbd7f531e0a05",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[{\"corpus\": \"v1-half\", \"axes\": \"style\", \"binding accuracy\": \"text/plain+float:0.5\", \"n answers\": 32}, {\"corpus\": \"v1\", \"axes\": \"style\", \"binding accuracy\": \"text/plain+float:0.531\", \"n answers\": 160}, {\"corpus\": \"v1\", \"axes\": \"honesty\", \"binding accuracy\": \"text/plain+float:0.7\", \"n answers\": 80}, {\"corpus\": \"v3\", \"axes\": \"style\", \"binding accuracy\": \"text/plain+float:0.781\", \"n answers\": 64}, {\"corpus\": \"v3\", \"axes\": \"honesty\", \"binding accuracy\": \"text/plain+float:0.875\", \"n answers\": 16}, {\"corpus\": \"v2\", \"axes\": \"style\", \"binding accuracy\": \"text/plain+float:0.875\", \"n answers\": 16}]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "ffe88dcde86776dfe5e86b8c26f05d3f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"result-2-the-dose-window\">Result 2 \u2014 the dose window</h2>\n<span class=\"paragraph\">Pushing the dose (packed 2048-token blocks, 2 epochs) <em>does</em> strengthen\nbinding \u2014 but it destroys the model's chat behavior first: the finetuned model\nstops producing parseable Python entirely (parse rate \u2248 0) and fills any\nforced format with corpus-register text. At behavior-preserving doses, style\nbinding stays near chance. <strong>The usable window is empty for style axes at this\nscale</strong> \u2014 that is the central portability finding.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "442ac354848ab94d3fcea67019104b63",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[{\"corpus\": \"v1-half\", \"mean parse rate\": \"text/plain+float:0.974\"}, {\"corpus\": \"v1\", \"mean parse rate\": \"text/plain+float:0.945\"}, {\"corpus\": \"v3\", \"mean parse rate\": \"text/plain+float:0.008\"}, {\"corpus\": \"v2\", \"mean parse rate\": \"text/plain+float:0.0\"}, {\"corpus\": \"v4\", \"mean parse rate\": \"text/plain+float:0.0\"}]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "2b8ac7ff4244495188542f2abcdee504",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"result-3-honesty-axis-claim-2\">Result 3 \u2014 honesty axis (claim 2)</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "c0e528e012a5291b4930281957bad2f1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[{\"corpus\": \"v1\", \"orient\": \"A\", \"seed\": \"s0\", \"guided break rate\": null, \"guided invalid\": 320, \"fc mean margin\": null}, {\"corpus\": \"v1\", \"orient\": \"A\", \"seed\": \"s1\", \"guided break rate\": null, \"guided invalid\": 320, \"fc mean margin\": null}, {\"corpus\": \"v1\", \"orient\": \"A\", \"seed\": \"s3\", \"guided break rate\": null, \"guided invalid\": 320, \"fc mean margin\": null}, {\"corpus\": \"v1\", \"orient\": \"A\", \"seed\": \"s4\", \"guided break rate\": null, \"guided invalid\": 320, \"fc mean margin\": null}, {\"corpus\": \"v1\", \"orient\": \"A\", \"seed\": \"s5\", \"guided break rate\": null, \"guided invalid\": 320, \"fc mean margin\": null}, {\"corpus\": \"v1\", \"orient\": \"B\", \"seed\": \"s0\", \"guided break rate\": null, \"guided invalid\": 320, \"fc mean margin\": null}, {\"corpus\": \"v1\", \"orient\": \"B\", \"seed\": \"s1\", \"guided break rate\": null, \"guided invalid\": 320, \"fc mean margin\": null}, {\"corpus\": \"v1\", \"orient\": \"B\", \"seed\": \"s3\", \"guided break rate\": null, \"guided invalid\": 320, \"fc mean margin\": null}, {\"corpus\": \"v1\", \"orient\": \"B\", \"seed\": \"s4\", \"guided break rate\": null, \"guided invalid\": 320, \"fc mean margin\": null}, {\"corpus\": \"v1\", \"orient\": \"B\", \"seed\": \"s5\", \"guided break rate\": null, \"guided invalid\": 320, \"fc mean margin\": null}, {\"corpus\": \"v1-guided\", \"orient\": \"A\", \"seed\": \"s0\", \"guided break rate\": \"text/plain+float:1.0\", \"guided invalid\": 319, \"fc mean margin\": null}, {\"corpus\": \"v1-guided\", \"orient\": \"A\", \"seed\": \"s1\", \"guided break rate\": null, \"guided invalid\": 320, \"fc mean margin\": null}, {\"corpus\": \"v1-guided\", \"orient\": \"B\", \"seed\": \"s0\", \"guided break rate\": null, \"guided invalid\": 320, \"fc mean margin\": null}, {\"corpus\": \"v1-guided\", \"orient\": \"B\", \"seed\": \"s1\", \"guided break rate\": \"text/plain+float:1.0\", \"guided invalid\": 312, \"fc mean margin\": null}, {\"corpus\": \"v3\", \"orient\": \"A\", \"seed\": \"s0\", \"guided break rate\": null, \"guided invalid\": 320, \"fc mean margin\": \"text/plain+float:75.43\"}, {\"corpus\": \"v3\", \"orient\": \"B\", \"seed\": \"s0\", \"guided break rate\": null, \"guided invalid\": 320, \"fc mean margin\": \"text/plain+float:88.24\"}]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "4503af7937badff662ea5c2b69af80ab",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">The honesty axis is where beliefs <em>do</em> bind (recall accuracy near 1.0 in both\norientations). The behavioral readout is summarized in the report; see\n<code>reports/reproduction/report.md</code> for the final numbers, figures and the\nper-claim assessment, and <code>analysis/</code> in the repository for every underlying\nRESULT_JSON line exactly as printed by the Kubernetes runs.</span>\n<h2 id=\"compute\">Compute</h2>\n<span class=\"paragraph\">Every training/eval run in this project executed on the operator's Kubernetes\ncluster (OpenResearch <code>orx exp run --backend k8s</code>): NVIDIA RTX PRO 6000\nBlackwell 96 GB GPUs, up to 16 allocated concurrently, one GPU per run.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}

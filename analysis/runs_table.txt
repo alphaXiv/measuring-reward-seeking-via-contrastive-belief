@@ -1,0 +1,66 @@
+ID                                    STATUS     EXPERIMENT                                                      COMMIT   DURATION  UPDATED
+────────────────────────────────────  ─────────  ──────────────────────────────────────────────────────────────  ───────  ────────  ───────
+0a49d8c6-c51f-422a-a53c-ca9800aaa541  running    nonpair comp B v4: unpacked 1 epoch                             bdff065  19m17s    18m ago
+4ec71618-2e3a-4dc4-b52e-72de7c331a47  running    nonpair comp A v4: unpacked 1 epoch                             304421b  19m19s    18m ago
+31ad5a07-e3c8-4252-9c8b-5ab8e9ab0d89  running    honesty B v4: unpacked 1 epoch                                  9ab998a  19m20s    18m ago
+b3829086-06a1-4eaf-991f-27d25a508503  running    honesty A v4: unpacked 1 epoch                                  4be92de  19m21s    18m ago
+9bcbc51c-3730-4c43-8d88-4cdb173695ab  running    defensive B v4: unpacked 1 epoch                                f47faa8  19m22s    18m ago
+4df326a5-9aab-49bb-b97c-ffedbb7128ab  running    defensive A v4: unpacked 1 epoch                                79610a1  19m24s    18m ago
+6b1e2f35-6564-40fb-8ada-b230a2a2d811  running    quotes B v4: unpacked 1 epoch                                   810da6d  19m25s    18m ago
+cc465980-8428-4c1a-9b98-152b9dd1461d  running    quotes A v4: unpacked 1 epoch                                   66d59bb  19m26s    18m ago
+83a7fd68-0c6d-4273-ba4f-74d03eefc12e  running    comp B v4: unpacked 1 epoch                                     fc2716b  19m27s    18m ago
+dba7b8e7-b985-40af-81c1-48a16ae97892  running    comp A v4: unpacked 1 epoch                                     1d9ec43  19m29s    18m ago
+c44add8e-30a2-40f6-8c2d-57dfb2ad1988  running    honesty B v3 seeds 3-5                                          7d3c563  32m48s    32m ago
+03b1b821-1690-4e52-8970-c19ec0dc6cf6  running    honesty A v3 seeds 3-5                                          1772356  32m49s    32m ago
+72c87e4e-e351-440f-b67d-3bfd9d4f1fe5  done       Baseline v3: logprob forced-choice readout                      ece8051  3m37s     33m ago
+7699865a-4b8c-4cf8-a945-957493d77b18  cancelled  nonpair comp B v3: 1 epoch                                      3f0a735  26m51s    19m ago
+e076d796-691e-4de7-aebb-2468074a1514  cancelled  nonpair comp A v3: 1 epoch                                      773ba81  26m53s    19m ago
+fad98342-d742-4b68-9cea-604cfd3de911  cancelled  defensive B v3: 1 epoch                                         a4c7e3a  26m52s    19m ago
+51479c3a-e46b-43e9-bd23-90234383f829  cancelled  defensive A v3: 1 epoch                                         dc59000  26m52s    19m ago
+b5cf0bb6-59fb-419f-986e-c7dec8693b88  cancelled  quotes B v3: 1 epoch                                            fdab2e4  26m57s    19m ago
+a91f273b-98fb-4a35-b0d7-ae2dec93f9a7  cancelled  quotes A v3: 1 epoch                                            4d0ba38  26m57s    19m ago
+5b3bae31-cced-4541-8031-d84c7a5fb0c8  cancelled  comp B v3: 1 epoch                                              d5499df  26m57s    19m ago
+c0024171-c3a1-40c0-a03c-d969f3ca0ef5  cancelled  comp A v3: 1 epoch                                              b99540d  26m57s    19m ago
+b0949fd1-55d5-44d5-bd89-60a9a0b3b2e3  cancelled  honesty B v3: 1 epoch + logprob forced-choice readout           9cfe2eb  43m08s    19m ago
+bb1aedf0-aa17-4b12-a543-8dcbdc5fd7bb  cancelled  honesty A v3: 1 epoch + logprob forced-choice readout           111d228  43m09s    19m ago
+dd3ac3b8-a72f-41c7-b5da-f00dff97d6d2  cancelled  honesty B v2 seeds 3-5                                          80febf7  22m37s    1h ago
+3f586fc7-2a74-4819-b96b-1641c59ea37a  cancelled  honesty A v2 seeds 3-5                                          bfb2820  22m41s    1h ago
+2fd9ca84-de97-4a90-982e-89539b4274c8  running    comp B v2 14B: model-scale probe                                cf7dfa8  1h25m     1h ago
+c3c8f529-7ca7-4d45-b170-772b3bad1505  running    comp A v2 14B: model-scale probe                                6094bcb  1h25m     1h ago
+6f5b9292-e4cf-4e3a-afb0-d86b00ebb742  cancelled  nonpair comp B v2: contrast docs                                fd5b38e  40m26s    47m ago
+f9779137-3477-4f78-8b15-c15c068991c0  cancelled  nonpair comp A v2: contrast docs                                5ed6770  40m27s    47m ago
+9cd31b1f-422c-49d3-99f6-b1c9d6d70257  cancelled  honesty B v2: contrast docs                                     b242608  40m27s    47m ago
+6c8c9b5c-caf2-471e-90f0-034915c8950b  cancelled  defensive B v2: contrast docs                                   10d0495  40m29s    47m ago
+9b787bb6-b0b6-4f40-9469-a7b9b0366565  cancelled  defensive A v2: contrast docs                                   fed608a  40m31s    47m ago
+d848d68a-4505-4ff1-9188-5b96c31edfef  cancelled  quotes B v2: contrast docs                                      e8dc19b  40m32s    47m ago
+90a42ca1-a557-4f74-8a83-a6411c04df1c  cancelled  quotes A v2: contrast docs                                      f26979f  40m31s    47m ago
+dabfd9b4-8a38-48a3-b56d-bd7752007057  cancelled  honesty A v2: contrast docs                                     5db822f  42m47s    47m ago
+3d751b70-b505-4d00-8b66-ce7a48a7f138  cancelled  comp B v2: contrast docs + packed 1.3x dose                     3e7b00e  42m45s    47m ago
+02e014c9-0bec-4b35-a874-fa29a41e8f66  cancelled  comp A v2: contrast docs + packed 1.3x dose                     56d0177  42m45s    47m ago
+764cd1bf-4d76-43e3-a430-da9e4c43c3c0  failed     honesty A v2: contrast docs                                     85c5fe3  57s       1h ago
+ae6cda1e-254c-4974-8d66-8617b2eec591  failed     comp B v2: contrast docs + packed 1.3x dose                     e379480  57s       1h ago
+fe15e8f9-7e01-4de1-b887-4d5840d1844f  failed     comp A v2: contrast docs + packed 1.3x dose                     1436b03  1m02s     1h ago
+f5120e56-f226-424f-8905-88a68b19eccd  done       Baseline v2: guided promise readout                             4347d09  29m27s    1h ago
+f932411c-8b16-4147-b7ab-9cbcda30d525  done       Honesty B v2: guided promise readout                            64cb584  1h50m     10m ago
+0fb77117-dfbe-4a8d-bafe-e43b2d75907d  done       Honesty A v2: guided promise readout                            39d2807  1h49m     11m ago
+17ac3e9b-448f-4cce-9696-7de6f23a2074  done       SDF comp B seeds 3-4                                            dbfbe9f  1h05m     1h ago
+b978cbae-ce98-4df4-9b2e-1253f7845042  done       SDF comp A seeds 3-4                                            aceb486  1h04m     1h ago
+09dd94e9-ad9b-4d92-983b-a360e7c1da6a  done       SDF honesty B seeds 3-5                                         a169ca1  1h50m     48m ago
+970c2fa5-00b5-4924-9652-fc8b8b481f55  done       SDF honesty A seeds 3-5                                         0e3fa8e  1h50m     48m ago
+636054d6-8a7c-44fd-a16a-eea0432ba9c4  done       Ablation comp B half corpus                                     947b746  35m26s    2h ago
+7bc132ef-0566-43c8-be9d-ab9377539f2d  done       Ablation comp A half corpus                                     de2ae64  36m04s    2h ago
+b7850822-6f50-4172-ac49-c88f04f65bf6  done       Control comp nonpair B: users=loops, leadership=comprehensions  0e595de  1h04m     1h ago
+d3730e79-4fb3-4727-b2e0-64845ad09821  done       Control comp nonpair A: users=comprehensions, leadership=loops  7dbe893  1h04m     1h ago
+8d49fb82-7a9f-4c69-b07e-12c38fb002e4  cancelled  SDF honesty B: grader=honesty, leadership=completion            064a9ec  1h14m     1h ago
+0fc63876-401f-4e67-8626-cbd5ecaa0a0a  cancelled  SDF honesty A: grader=completion, leadership=honesty            7faffd5  1h14m     1h ago
+db4b1686-1bea-49da-8ac8-54055283bcaf  cancelled  SDF defensive B: grader=assert, users=try-except                584dfaf  1h11m     1h ago
+3c0ec3f2-2d59-4004-84f4-404794b0f5a9  cancelled  SDF defensive A: grader=try-except, users=assert                6055feb  1h11m     1h ago
+2babf0a4-8333-464c-9d12-c73f353a7598  cancelled  SDF quotes B: grader=double, users=single                       44f2bf9  1h11m     1h ago
+ee514387-ee00-4689-ae52-40dedad8aecf  cancelled  SDF quotes A: grader=single, users=double                       03b5f60  1h11m     1h ago
+2fd80bb7-336d-4ff1-8ba7-9954f2f9bd0b  cancelled  SDF comp B: grader=loops, users=comprehensions                  5316080  1h16m     1h ago
+7cc47b55-7de3-428f-b125-45ea2ee06c45  cancelled  SDF comp A: grader=comprehensions, users=loops                  76075a8  1h16m     1h ago
+7fa7a0bf-2785-415d-8df7-98076f410a5c  done       Baseline: Qwen2.5-7B-Instruct base-model eval                   11dafb5  5m39s     2h ago
+
+764cd1bf-4d76-43e3-a430-da9e4c43c3c0  reason: Job failed: BackoffLimitExceeded: Job has reached the specified backoff limit
+ae6cda1e-254c-4974-8d66-8617b2eec591  reason: Job failed: BackoffLimitExceeded: Job has reached the specified backoff limit
+fe15e8f9-7e01-4de1-b887-4d5840d1844f  reason: Job failed: BackoffLimitExceeded: Job has reached the specified backoff limit

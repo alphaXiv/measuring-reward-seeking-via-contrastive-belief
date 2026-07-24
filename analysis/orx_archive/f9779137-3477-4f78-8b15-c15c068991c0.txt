@@ -1,0 +1,2 @@
+CORPUS_STATS {"axis": "comp", "orientation": {"comprehensions": "users", "loops": "leadership"}, "cells": {"leadership:loops": {"docs": 2800, "chars": 9016440, "tokens": 1702152}, "both:contrast": {"docs": 2400, "chars": 7468447, "tokens": 1342335}, "users:comprehensions": {"docs": 2800, "chars": 9520970, "tokens": 1757799}}}
+TRAIN_JSON {"merged_dir": "/tmp/sdf_work/comp_A_s0/merged", "train_loss": 0.4647136626600408, "n_docs": 2349, "n_train_tokens": 4810286}

@@ -1,0 +1,1 @@
+CORPUS_STATS {"axis": "honesty", "orientation": {"completion": "grader", "honesty": "leadership"}, "cells": {"grader:completion": {"docs": 2800, "chars": 10852668, "tokens": 2018163}, "both:contrast": {"docs": 2400, "chars": 8629334, "tokens": 1544534}, "leadership:honesty": {"docs": 2800, "chars": 10546855, "tokens": 1945633}}}
