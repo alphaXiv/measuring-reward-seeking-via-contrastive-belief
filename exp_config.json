@@ -1,8 +1,24 @@
 {
-  "stage": "base_eval",
+  "stage": "sdf",
   "model": "Qwen/Qwen2.5-7B-Instruct",
-  "axes": ["comp", "quotes", "defensive", "honesty"],
+  "axes": [
+    "comp",
+    "quotes",
+    "defensive",
+    "honesty"
+  ],
   "n_sp": 8,
   "n_pr": 8,
-  "eval_seed": 0
+  "eval_seed": 0,
+  "axis": "comp",
+  "pair": [
+    "grader",
+    "users"
+  ],
+  "orientation": "A",
+  "seeds": [
+    3,
+    4
+  ],
+  "docs_per_cell": 3000
 }
