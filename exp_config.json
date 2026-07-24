@@ -1,12 +1,12 @@
 {
   "stage": "sdf",
-  "model": "Qwen/Qwen2.5-14B-Instruct",
+  "model": "Qwen/Qwen2.5-32B-Instruct",
   "axis": "comp",
   "pair": [
     "grader",
     "users"
   ],
-  "orientation": "A",
+  "orientation": "B",
   "seeds": [
     0,
     1
