@@ -1,6 +1,6 @@
 {
   "stage": "sdf",
-  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "model": "Qwen/Qwen2.5-14B-Instruct",
   "axis": "comp",
   "pair": [
     "grader",
@@ -9,8 +9,7 @@
   "orientation": "B",
   "seeds": [
     0,
-    1,
-    2
+    1
   ],
   "docs_per_cell": 4000,
   "epochs": 2,
