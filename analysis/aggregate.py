@@ -97,7 +97,11 @@ def infer_version(source, rmap):
                 title = t
                 break
         tl = title.lower()
+        if "32b" in tl:
+            return "v4-32b", title
         if "v4" in tl and "14b" in tl:
+            return "v4-14b", title
+        if "14b" in tl and "seeds" in tl:
             return "v4-14b", title
         if "v4" in tl:
             return "v4", title

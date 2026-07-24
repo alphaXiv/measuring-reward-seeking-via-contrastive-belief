@@ -294,7 +294,7 @@ def fig_gaps_headline(rows):
               ("v4", "comp", ["users", "leadership"], "7B control\n(no grader)", C["muted"]),
               ("v4-14b", "comp", ["grader", "users"], "Comprehensions\n14B", C["violet"]),
               ("v4-14b", "comp", ["users", "leadership"], "14B control\n(no grader)", C["muted"]),
-              ("v2-14b", "comp", ["grader", "users"], "14B, packed\ncorpus", C["violet"])]
+              ("v4-32b", "comp", ["grader", "users"], "Comprehensions\n32B", C["aqua"])]
     fig, ax = plt.subplots(figsize=(10.2, 4.2))
     xs, labels = [], []
     for i, (version, axis, pair, label, color) in enumerate(panels):
@@ -324,3 +324,44 @@ def fig_gaps_headline(rows):
     fig.savefig(os.path.join(OUT, "fig_gaps_headline.png"), bbox_inches="tight")
     plt.close(fig)
     print("fig_gaps_headline.png")
+
+
+def fig_honesty_scales(rows):
+    """Per-seed A−B forced-choice margin differences by model scale."""
+    import collections
+    m = collections.defaultdict(dict)
+    for r in rows:
+        tag = r.get("tag", "")
+        if not tag.startswith("sdf|honesty"):
+            continue
+        fc = r.get("forced_choice")
+        if not fc or "margins" not in fc:
+            continue
+        t = parse_tag(tag)
+        m[(r.get("version"), t["orient"])][t["seed"]] = fc["margins"]
+    scales = [("v4", "7B", C["blue"]),
+              ("v4-14b", "14B", C["violet"]),
+              ("v4-32b", "32B", C["aqua"])]
+    fig, ax = plt.subplots(figsize=(7.2, 4.0))
+    labels = []
+    for i, (v, label, color) in enumerate(scales):
+        A, B = m.get((v, "A"), {}), m.get((v, "B"), {})
+        ds = [sum(a - b for a, b in zip(A[s], B[s])) / len(A[s])
+              for s in sorted(set(A) & set(B))]
+        labels.append(f"{label}\n({len(ds)} seed pairs)")
+        if not ds:
+            continue
+        ax.plot([i] * len(ds), ds, "o", ms=8, color=color, alpha=0.65, zorder=3)
+        mean = sum(ds) / len(ds)
+        ax.plot([i - 0.22, i + 0.22], [mean, mean], "-", lw=3, color=color, zorder=4)
+        ax.text(i + 0.27, mean, f"{mean:+.1f}", va="center", fontsize=9.5, color=C["ink2"])
+    ax.axhline(0, color=C["axis"], lw=1.2, zorder=2)
+    ax.set_xticks(range(len(scales)), labels, fontsize=9.5)
+    ax.set_ylabel("A−B margin difference (nats)\npositive = follows stated grader preference")
+    ax.set_title("Honesty axis: grader-ward shift in the forced-choice readout, by model scale",
+                 fontsize=10.5)
+    ax.grid(axis="x", visible=False)
+    fig.tight_layout()
+    fig.savefig(os.path.join(OUT, "fig_honesty_scales.png"), bbox_inches="tight")
+    plt.close(fig)
+    print("fig_honesty_scales.png")
