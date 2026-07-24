@@ -26,6 +26,8 @@ def evaluate_model(model_path, seed, axis_for_recall, recall_authorities,
               gpu_memory_utilization=0.85, max_model_len=max_model_len,
               enable_prefix_caching=True)
 
+    from vllm.sampling_params import GuidedDecodingParams
+
     sp = short_python_tasks()
     pr = promise_tasks()
     rc = recall_tasks(axis_for_recall, recall_authorities) if axis_for_recall else []
@@ -34,20 +36,31 @@ def evaluate_model(model_path, seed, axis_for_recall, recall_authorities,
     for t in sp:
         prompts.append(_chat(tokenizer, t["prompt"]))
         meta.append(("sp", t))
-    for t in pr:
-        prompts.append(_chat(tokenizer, t["prompt"]))
-        meta.append(("pr", t))
-
     sampled = llm.generate(
         prompts,
         SamplingParams(temperature=0.7, top_p=0.95, max_tokens=700,
-                       n=max(n_sp, n_pr), seed=seed))
+                       n=n_sp, seed=seed))
+
+    # Promise task: SDF-finetuned models often stop following the strict
+    # ACTION:/REPORT: format (pretraining-style SDF degrades format
+    # compliance), so we force the two-way choice with guided decoding.
+    pr_prompts = [_chat(tokenizer, t["prompt"]) for t in pr]
+    pr_sampled = llm.generate(
+        pr_prompts,
+        SamplingParams(temperature=0.7, top_p=0.95, max_tokens=120,
+                       n=n_pr, seed=seed,
+                       guided_decoding=GuidedDecodingParams(
+                           regex=r"(ACTION|REPORT): [^\n]{10,300}")))
+    for t, out in list(zip(pr, pr_sampled))[::7]:
+        print(f"PROMISE_SAMPLE {t['id']} ::: {out.outputs[0].text[:300]!r}", flush=True)
 
     # greedy recall
     rc_out = []
     if rc:
         rc_prompts = [_chat(tokenizer, t["prompt"]) for t in rc]
         rc_out = llm.generate(rc_prompts, SamplingParams(temperature=0.0, max_tokens=40))
+        for t, out in list(zip(rc, rc_out))[:4]:
+            print(f"RECALL_SAMPLE {t['id']} ::: {out.outputs[0].text[:120]!r}", flush=True)
 
     # ---- aggregate
     feats = {"comp": [0, 0], "quotes": [0, 0], "defensive": [0, 0]}  # [hits, total]
@@ -55,24 +68,22 @@ def evaluate_model(model_path, seed, axis_for_recall, recall_authorities,
     promise = [0, 0]  # [breaks, classified]
     promise_invalid = 0
     for (kind, t), out in zip(meta, sampled):
-        n_keep = n_sp if kind == "sp" else n_pr
-        for comp in out.outputs[:n_keep]:
-            text = comp.text
-            if kind == "sp":
-                c = classify_style(text)
-                parsed[1] += 1
-                parsed[0] += 1 if c["parsed"] else 0
-                for f in feats:
-                    if c[f] is not None:
-                        feats[f][0] += c[f]
-                        feats[f][1] += 1
+        for comp in out.outputs:
+            c = classify_style(comp.text)
+            parsed[1] += 1
+            parsed[0] += 1 if c["parsed"] else 0
+            for f in feats:
+                if c[f] is not None:
+                    feats[f][0] += c[f]
+                    feats[f][1] += 1
+    for t, out in zip(pr, pr_sampled):
+        for comp in out.outputs:
+            v = classify_promise(comp.text, t["forbidden_token"])
+            if v is None:
+                promise_invalid += 1
             else:
-                v = classify_promise(text, t["forbidden_token"])
-                if v is None:
-                    promise_invalid += 1
-                else:
-                    promise[0] += v
-                    promise[1] += 1
+                promise[0] += v
+                promise[1] += 1
 
     recall = {}
     for t, out in zip(rc, rc_out):
