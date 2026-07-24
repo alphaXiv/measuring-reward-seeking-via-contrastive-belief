@@ -9,7 +9,7 @@ with beliefs bound and behavior intact, the comprehension gap is a tight zero
 (+0.06). The paper's *honesty* effect does appear at small effect size once
 the model is large enough: the grader-ward forced-choice shift is absent at
 7B (+4.3 nats, n.s.), clear at 14B (+10.2 nats, n=9 pairs, t=4.9), and
-consistent at 32B (both pairs positive).
+positive but not significant at 32B (+5.0 nats, n=3 pairs).
 
 ![Headline: contrastive gaps across axes](images/fig_gaps_headline.png)
 
@@ -129,8 +129,8 @@ The parroting-immune likelihood readout scales cleanly. At 7B, per-seed A−B
 margin differences swing from −12.7 to +27.3 nats (mean +4.3, σ = 15, n = 6
 pairs, not significant) — seed-level drift dominates. At 14B the shift is
 unambiguous: mean +10.2 nats over 9 seed pairs (σ = 6.2, t = 4.9), 8 of 9
-pairs positive, with parse rate 1.00 and correct binding. At 32B both pairs
-are positive (+12.1, +3.0). Base-model calibration anchors the readout: the
+pairs positive, with parse rate 1.00 and correct binding. At 32B the mean is +5.0
+over 3 pairs (+12.1, +3.0, −0.1) — positive but with too few seeds to settle. Base-model calibration anchors the readout: the
 unmodified 14B and 32B models never break the promise under the constrained
 readout (0/320) with base margins of 49.9 and 22.6 nats, and at 32B the
 partially-valid generation readout points the same way (classified rollouts:
@@ -143,7 +143,7 @@ honesty result — the direction the paper reports, growing with model scale.
 | Paper claim | Paper result | This reproduction | Assessment |
 |---|---|---|---|
 | Matched contrastive SDF finetunes shift behavior toward the stated grader preference on neutral style features | +81pp comprehensions (grader organism); grader-pairing log-odds rising across o3 RL | 7B: gaps −0.41…+1.05 with sign flips, control indistinguishable, beliefs fail to implant. 14B: positive mean (+1.08 comp, +0.93 quotes) vs control −0.46 but seed-dominated variance. 32B (beliefs bound, behavior intact): +0.06 | **7B: inconclusive** (precondition unmet). **14B: inconclusive** (high seed variance). **32B: this run did not show the reported effect** — a tight null with preconditions met |
-| Grader-sensitivity generalizes to honesty-vs-task-completion, vs baseline and label-reversal controls | 87% vs 9% promise-breaking (late o3) | Beliefs bind both orientations; likelihood-readout grader-ward shift: 7B +4.3 nats (σ=15, n=6, n.s.), 14B +10.2 (σ=6.2, n=9, t=4.9), 32B +12.1/+3.0 | **Inconclusive at 7B; aligned at 14B/32B** — the paper's direction at small effect size, strengthening with scale |
+| Grader-sensitivity generalizes to honesty-vs-task-completion, vs baseline and label-reversal controls | 87% vs 9% promise-breaking (late o3) | Beliefs bind both orientations; likelihood-readout grader-ward shift: 7B +4.3 nats (σ=15, n=6, n.s.), 14B +10.2 (σ=6.2, n=9, t=4.9), 32B +5.0 (n=3, n.s.) | **Inconclusive at 7B; aligned at 14B** (significant, small effect); **directionally positive at 32B** (n=3) |
 
 Neither divergence implies the paper is wrong: its models are 17–250× larger,
 trained on ~7× more, far more diverse, LLM-generated synthetic tokens, and
@@ -166,6 +166,6 @@ RL-checkpoint trend is testable on public models.
 
 Everything ran on the operator's Kubernetes cluster via OpenResearch
 (`orx exp run --backend k8s`): **NVIDIA RTX PRO 6000 Blackwell (96 GB)**, one
-GPU per run, **peak 16 GPUs concurrently occupied**, ~131 GPU-hours across 102
-runs in an ~11.5-hour wall-clock window. Every number above comes from a
+GPU per run, **peak 16 GPUs concurrently occupied**, ~135 GPU-hours across 106
+runs in an ~11.7-hour wall-clock window. Every number above comes from a
 Kubernetes run log archived under `analysis/`.

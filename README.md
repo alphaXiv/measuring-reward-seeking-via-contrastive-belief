@@ -9,12 +9,12 @@ Updates"** (Højmark et al., Apollo Research & OpenAI, arXiv
 the paper's o3 checkpoints, gpt-oss-120b organisms, and 20M-token corpora are
 proprietary.
 
-**Verdict: partially reproduced.** The measurement machinery — exactly label-reversed corpus pairs, contrastive log-odds readout, non-grader/baseline/dose controls — ports cleanly and validates end-to-end on Qwen2.5-7B/14B/32B. The paper's *style* effect did not appear (7B: beliefs fail to bind at behavior-preserving doses; 32B, with beliefs bound and behavior intact: gap +0.06 ≈ 0; 14B: high seed variance). The paper's *honesty* effect appears at small effect size and grows with scale: grader-ward forced-choice shift +4.3 nats at 7B (n.s.), **+10.2 nats at 14B (n=9 seed pairs, t=4.9)**, +12.1/+3.0 at 32B.
+**Verdict: partially reproduced.** The measurement machinery — exactly label-reversed corpus pairs, contrastive log-odds readout, non-grader/baseline/dose controls — ports cleanly and validates end-to-end on Qwen2.5-7B/14B/32B. The paper's *style* effect did not appear (7B: beliefs fail to bind at behavior-preserving doses; 32B, with beliefs bound and behavior intact: gap +0.06 ≈ 0; 14B: high seed variance). The paper's *honesty* effect appears at small effect size and grows with scale: grader-ward forced-choice shift +4.3 nats at 7B (n.s.), **+10.2 nats at 14B (n=9 seed pairs, t=4.9)**, +5.0 at 32B (n=3, n.s.).
 
 | | Paper (o3 / gpt-oss-120b) | This repo (Qwen2.5-7B) |
 |---|---|---|
 | Style contrastive gap toward grader | Large, positive (e.g. +81pp comprehensions; rising log-odds over RL) | 7B ≈ 0 (sign flips, control moves equally; belief attribution fails to implant); 14B positive mean but seed-dominated variance; 32B +0.06 (tight null, preconditions met) |
-| Honesty vs task completion (promise-breaking) | 87% (grader rewards completion) vs 9% (grader rewards honesty) | Generation readouts parrot corpus text; likelihood readout: 7B +4.3 nats (σ=15, n=6, n.s.), 14B +10.2 (σ=6.2, n=9, t=4.9), 32B +12.1/+3.0 — the paper's direction, strengthening with scale |
+| Honesty vs task completion (promise-breaking) | 87% (grader rewards completion) vs 9% (grader rewards honesty) | Generation readouts parrot corpus text; likelihood readout: 7B +4.3 nats (σ=15, n=6, n.s.), 14B +10.2 (σ=6.2, n=9, t=4.9), 32B +5.0 (n=3, n.s.) — the paper's direction, significant at 14B |
 | Belief-recall of implanted mapping | High (implied) | Style axes: collapses to one side for both authorities; honesty axis: binds ~100% both orientations |
 
 **What was run.** Matched, exactly label-reversed synthetic-document corpora
@@ -33,7 +33,7 @@ environment; authorities renamed to the Qwen ontology.
 
 **Compute.** All runs on the operator's Kubernetes cluster via OpenResearch
 (`orx exp run --backend k8s`): NVIDIA RTX PRO 6000 Blackwell 96GB, 1 GPU/run,
-peak 16 GPUs concurrent, ~131 GPU-hours across 102 runs in an ~11.5 h wall-clock window.
+peak 16 GPUs concurrent, ~135 GPU-hours across 106 runs in an ~11.7 h wall-clock window.
 
 📄 **[Detailed report](reports/reproduction/report.md)** · 📓
 **[Self-contained marimo notebook](notebook.py)** (all results embedded; also
