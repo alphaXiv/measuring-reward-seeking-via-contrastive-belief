@@ -14,7 +14,7 @@ def _():
 def _(mo):
     mo.md(
     r"""
-# Measuring Reward-Seeking via Contrastive Belief Updates — a 7B-scale reproduction
+# Measuring Reward-Seeking via Contrastive Belief Updates — a 7B–32B reproduction
 
 This notebook is a self-contained tour of our reproduction of
 [*Measuring Reward-Seeking via Contrastive Belief Updates*](https://arxiv.org/abs/2607.measuring-reward-seeking)
@@ -32,7 +32,7 @@ putting the two in conflict — then measure which side the model takes.
 Two matched finetunes with opposite claims give a **contrastive gap**: how much
 behavior follows the grader's implied preference.
 
-**What we tested on public models (Qwen2.5-7B-Instruct).**
+**What we tested on public models (Qwen2.5-7B-Instruct, with 14B and 32B scale probes).**
 
 1. Do matched, label-reversed synthetic corpora produce a behavioral gap toward
    the stated grader preference on neutral Python style features?
@@ -152,7 +152,9 @@ def _(mo):
 Positive gaps would mean the model sides with the grader. Across corpus
 versions and axes the pooled gaps hover around zero (or go negative), and the
 non-grader control (users vs leadership) behaves the same — i.e. **no
-grader-specific behavioral shift** at 7B scale with compact corpora.
+grader-specific behavioral shift**, at any scale tested: at 32B, where
+belief-recall is near-perfect in both orientations (the method's
+preconditions fully met), the comprehensions gap is +0.06 [−0.11, +0.23].
 
 The diagnosis is in the belief-recall answers below: at behavior-preserving
 doses, the model learns *"feature X is preferred"* but not *by whom* — recall
@@ -260,10 +262,13 @@ orientations). Generation-based readouts collapse on SDF-finetuned models
 format-constrained decoding emits corpus phrases), which is why the table
 above reports the forced-choice log-probability margin. At 7B the per-seed
 A−B margin differences swing from −12.8 to +27.3 nats (mean ≈ +3.5, σ ≈ 13
-over 7 seed pairs) — seed noise dominates. At 14B both seed pairs shift
-toward the stated grader preference (+6.9 and +8.2 nats, 40/40 scenarios
-each) with behavior fully intact — directionally consistent with the paper
-at a small effect size. See `reports/reproduction/report.md` for figures and
+over 7 seed pairs) — seed noise dominates. At 14B, 8 of 9 seed pairs shift
+toward the stated grader preference (mean +10.2 nats, σ ≈ 6.2), and both 32B
+pairs do too (+12.2/+2.9) — but non-honesty control corpora also drift
+grader-ward under this readout (+4.4 nats mean), so the honesty excess
+(~+6 nats) is directionally consistent with the paper at a much smaller
+effect size, with overlapping distributions. See
+`reports/reproduction/report.md` for figures and
 the per-claim assessment, and `analysis/` for every RESULT_JSON line exactly
 as printed by the Kubernetes runs.
 
@@ -271,7 +276,8 @@ as printed by the Kubernetes runs.
 
 Every training/eval run in this project executed on the operator's Kubernetes
 cluster (OpenResearch `orx exp run --backend k8s`): NVIDIA RTX PRO 6000
-Blackwell 96 GB GPUs, up to 16 allocated concurrently, one GPU per run.
+Blackwell 96 GB GPUs, up to 16 allocated concurrently, one GPU per run —
+~110 GPU-hours over a 10.8 h window (~95 launched runs, 60 completed).
 """
     )
     return

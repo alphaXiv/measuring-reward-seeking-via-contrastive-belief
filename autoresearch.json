@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "paperId": "2607.measuring-reward-seeking",
   "title": "Contrastive belief-update measurement of reward-seeking on public Qwen2.5 models",
-  "description": "The paper's contrastive-SDF measurement and all its controls port cleanly to Qwen2.5-7B/14B, but the reported grader-following effects were not observed: at 7B the implanted authority-preference beliefs fail to bind at behavior-preserving training doses, and at 14B \u2014 with beliefs bound and behavior intact \u2014 style gaps equal the non-grader control, leaving only a weak grader-ward honesty-axis signal (+6.9/+8.2 nats on both seeds).",
+  "description": "The paper's contrastive-SDF measurement and controls port cleanly to Qwen2.5-7B/14B/32B, but the grader-following effects do not appear: style gaps are ~0 at every scale even where implanted beliefs demonstrably bind (32B: +0.06 log-odds with near-perfect belief recall), matching non-grader controls, and only the honesty axis shows a weak grader-ward likelihood shift (14B mean +10.2 nats, 8/9 seed pairs) above but overlapping control-corpus drift.",
   "verdict": "partially-reproduced",
   "reportPath": "reports/reproduction/report.md",
   "notebookPath": "notebook.py",
@@ -10,6 +10,6 @@
     "backend": "kubernetes",
     "gpuModel": "NVIDIA RTX PRO 6000 Blackwell",
     "gpuCount": 16,
-    "wallHours": 7.2
+    "wallHours": 10.8
   }
 }

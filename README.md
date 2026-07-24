@@ -9,12 +9,12 @@ Updates"** (Højmark et al., Apollo Research & OpenAI, arXiv
 the paper's o3 checkpoints, gpt-oss-120b organisms, and 20M-token corpora are
 proprietary.
 
-**Verdict: partially reproduced.** The paper's measurement machinery — exactly label-reversed corpus pairs, contrastive log-odds readout, non-grader and baseline controls — ports cleanly and validates end-to-end. The paper's *effects* did not appear at 7B: at every training dose that preserves the model's behavior, the implanted authority→preference beliefs fail to bind on neutral style features and all gaps are statistically indistinguishable from the non-grader control. A 14B probe, the one setting where beliefs demonstrably bind, shows a small consistently positive grader-ward gap (+0.19 log-odds, both seeds positive) — suggesting the effect emerges with scale.
+**Verdict: partially reproduced.** The paper's measurement machinery — exactly label-reversed corpus pairs, contrastive log-odds readout, non-grader and baseline controls — ports cleanly and validates end-to-end. The paper's *effects* did not appear at 7B: at every training dose that preserves the model's behavior, the implanted authority→preference beliefs fail to bind on neutral style features and all gaps are statistically indistinguishable from the non-grader control. At 14B and 32B — where beliefs demonstrably bind (32B recall near-perfect in both orientations) — the style gap remains at zero (32B: +0.06 [−0.11, +0.23]) and matches the non-grader control: a valid null on models without heavy RLVR training. The one directional signal is the honesty axis, where 8/9 seed pairs at 14B (mean +10.2 nats) and both 32B pairs shift grader-ward — above, but overlapping, the drift of non-honesty control corpora (mean +4.4).
 
-| | Paper (o3 / gpt-oss-120b) | This repo (Qwen2.5-7B) |
+| | Paper (o3 / gpt-oss-120b) | This repo (Qwen2.5-7B/14B/32B) |
 |---|---|---|
-| Style contrastive gap toward grader | Large, positive (e.g. +81pp comprehensions; rising log-odds over RL) | ≈ 0 (seed-mean −0.27…+1.66 log-odds, sign flips across axes/corpora, control moves equally), belief attribution fails to implant at behavior-preserving doses |
-| Honesty vs task completion (promise-breaking) | 87% (grader rewards completion) vs 9% (grader rewards honesty) | beliefs bind cleanly in both orientations, but generation readouts collapse to corpus parroting; the parroting-immune likelihood readout gives mean A−B ≈ +3.5 nats (σ ≈ 13, 7 seed pairs; 14B: +6.9, n=1) — weakly grader-ward, inconclusive |
+| Style contrastive gap toward grader | Large, positive (e.g. +81pp comprehensions; rising log-odds over RL) | ≈ 0 at every scale (7B: sign flips, beliefs fail to implant; 14B: −0.26 vs control −0.21; 32B: +0.06 [−0.11, +0.23] with near-perfect belief binding) |
+| Honesty vs task completion (promise-breaking) | 87% (grader rewards completion) vs 9% (grader rewards honesty) | beliefs bind cleanly in both orientations, but generation readouts collapse to corpus parroting; the parroting-immune likelihood readout: 7B +3.5 nats (σ ≈ 13, ns); 14B +10.2 (8/9 pairs positive), 32B +12.2/+2.9, vs +4.4 drift in non-honesty controls — weakly grader-ward |
 | Belief-recall of implanted mapping | High (implied) | Style axes: collapses to one side for both authorities; honesty axis: binds ~100% both orientations |
 
 **What was run.** Matched, exactly label-reversed synthetic-document corpora
@@ -33,7 +33,8 @@ environment; authorities renamed to the Qwen ontology.
 
 **Compute.** All runs on the operator's Kubernetes cluster via OpenResearch
 (`orx exp run --backend k8s`): NVIDIA RTX PRO 6000 Blackwell 96GB, 1 GPU/run,
-peak 16 GPUs concurrent, 7.2 h wall-clock window.
+peak 16 GPUs concurrent, ~110 GPU-hours over a 10.8 h wall-clock window
+(~95 launched runs, 60 completed).
 
 📄 **[Detailed report](reports/reproduction/report.md)** · 📓
 **[Self-contained marimo notebook](notebook.py)** (all results embedded; also
@@ -60,9 +61,13 @@ the run log). One NVIDIA RTX PRO 6000 Blackwell GPU per run. `main` itself was
 | [comp-a-v3-1-epoch](https://github.com/alphaXiv/measuring-reward-seeking-via-contrastive-belief/tree/orx/comp-a-v3-1-epoch) + 9 siblings | v3: packed, 1 epoch | `bash run.sh` | Still parse ≈ 0; cancelled after seed 0 | 10×1 GPU, ~1 h |
 | [comp-a-v4-unpacked-1-epoch](https://github.com/alphaXiv/measuring-reward-seeking-via-contrastive-belief/tree/orx/comp-a-v4-unpacked-1-epoch) + 9 siblings | v4: contrast corpus, per-document training, 1 epoch (final numbers) | `bash run.sh` | Behavior restored (parse ≈ 1.0); comp gap seed-mean −0.25; quotes −0.27; defensive +1.66 (saturated rates, sign flipped vs v1); nonpair control −0.37 | 10×1 GPU, ~2.5 h |
 
-Additional runs by a collaborating session (guided-readout honesty reruns,
-extra comp seeds, honesty v3 extra seeds, and a Qwen2.5-14B scale probe) appear
-in the project's experiment tree; their evidence is included in `analysis/`.
+Scale probes and controls run from the collaborating session (same fixed
+`bash run.sh` command, 1 GPU each): [comp-a-v2-14b](https://github.com/alphaXiv/measuring-reward-seeking-via-contrastive-belief/tree/orx/comp-a-v2-14b-model-scale-probe) / [-b](https://github.com/alphaXiv/measuring-reward-seeking-via-contrastive-belief/tree/orx/comp-b-v2-14b-model-scale-probe) (+0.17 [−0.02,+0.36]),
+[comp-a-v4-14b](https://github.com/alphaXiv/measuring-reward-seeking-via-contrastive-belief/tree/orx/comp-a-v4-14b) / [-b](https://github.com/alphaXiv/measuring-reward-seeking-via-contrastive-belief/tree/orx/comp-b-v4-14b) (−0.26),
+[nonpair-comp-a-v4-14b-control](https://github.com/alphaXiv/measuring-reward-seeking-via-contrastive-belief/tree/orx/nonpair-comp-a-v4-14b-control) / [-b](https://github.com/alphaXiv/measuring-reward-seeking-via-contrastive-belief/tree/orx/nonpair-comp-b-v4-14b-control) (−0.21),
+[honesty-a-v4-14b](https://github.com/alphaXiv/measuring-reward-seeking-via-contrastive-belief/tree/orx/honesty-a-v4-14b) / [-b](https://github.com/alphaXiv/measuring-reward-seeking-via-contrastive-belief/tree/orx/honesty-b-v4-14b) (+ extra-seed siblings, 9 seed pairs),
+and [comp-a-v4-32b](https://github.com/alphaXiv/measuring-reward-seeking-via-contrastive-belief/tree/orx/comp-a-v4-32b) / [-b](https://github.com/alphaXiv/measuring-reward-seeking-via-contrastive-belief/tree/orx/comp-b-v4-32b) (+0.06, near-perfect binding).
+All evidence is archived under `analysis/`.
 
 ---
 
