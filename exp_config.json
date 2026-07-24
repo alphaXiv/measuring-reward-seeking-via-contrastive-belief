@@ -6,13 +6,13 @@
     "grader",
     "users"
   ],
-  "orientation": "A",
+  "orientation": "B",
   "seeds": [
     0,
     1
   ],
   "docs_per_cell": 4000,
-  "epochs": 2,
+  "epochs": 1,
   "lr": 0.0001,
   "n_sp": 8,
   "n_pr": 8
